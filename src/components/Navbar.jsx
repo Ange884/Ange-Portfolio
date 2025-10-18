@@ -1,14 +1,15 @@
 'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import "../styles/Navbar.css"
 
 export default function Navbar() {
+  const pathname = usePathname();
   const links = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Projects', href: '/projects' },
     { name: 'Contact', href: '/contact' },
-    // Note: 'Footer' seems unusual for a navbar; consider moving to footer component if applicable
     { name: 'Footer', href: '/footer' },
   ];
 
@@ -17,7 +18,10 @@ export default function Navbar() {
       <ul className="navbar-list">
         {links.map((link) => (
           <li key={link.name}>
-            <Link href={link.href} className="navbar-link group">
+            <Link 
+              href={link.href} 
+              className={`navbar-link group ${pathname === link.href ? 'active' : ''}`}
+            >
               <span className="navbar-link-text">{link.name}</span>
             </Link>
           </li>
