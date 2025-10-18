@@ -10,7 +10,7 @@ export default function Page() {
       <div className={styles.container}>
         <div className={styles.imageSection}>
           <Image
-            src="/images/Nziza.jpg"
+            src="/images/Ange.jpg"
             alt="Your Portrait"
             width={400}
             height={400}
@@ -19,7 +19,7 @@ export default function Page() {
           />
         </div>
         <div className={styles.textSection}>
-          <h1 className={styles.heroTitle}>Hello, I'm <span className={styles.highlightName}>[Nziza]</span></h1>
+          <h1 className={styles.heroTitle}>Hello, I'm <span className={styles.highlightName}>Nziza</span></h1>
           <p className={styles.heroSubtitle}>
             Creative Developer | Designer | Dreamer<br />
             <span className={styles.welcomeText}>Welcome to my portfolio!</span>
