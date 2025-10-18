@@ -10,16 +10,20 @@ export default function Page() {
       <div className={styles.container}>
         <div className={styles.imageSection}>
           <Image
-            src="/your-image.jpg"
+            src="/images/Nziza.jpg"
             alt="Your Portrait"
             width={400}
             height={400}
             className={styles.profileImage}
+            priority // Loads faster for above-the-fold image
           />
         </div>
         <div className={styles.textSection}>
-          <h1>Hello, I'm [Your Name]</h1>
-          <p>Creative Developer | Designer | Dreamer<br />Welcome to my portfolio!</p>
+          <h1 className={styles.heroTitle}>Hello, I'm <span className={styles.highlightName}>[Nziza]</span></h1>
+          <p className={styles.heroSubtitle}>
+            Creative Developer | Designer | Dreamer<br />
+            <span className={styles.welcomeText}>Welcome to my portfolio!</span>
+          </p>
         </div>
       </div>
     </>
