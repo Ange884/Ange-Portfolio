@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import "../styles/Navbar.css"
+import { href } from 'react-router-dom';
 
 export default function Navbar() {
   const pathname = usePathname();

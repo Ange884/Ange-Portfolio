@@ -1,28 +1,29 @@
 /* styles/Home.module.css */
+
+/* 🌈 Overall Layout */
 .container {
   display: flex;
   height: 100vh;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 3rem;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Subtle gradient for depth */
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   overflow-x: hidden;
-  position: relative; /* For potential background elements */
+  position: relative;
 }
 
+/* Subtle texture overlay */
 .container::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>'); /* Subtle grain texture for texture */
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
   pointer-events: none;
   z-index: -1;
 }
 
+/* Layout Sections */
 .imageSection,
 .textSection {
   flex: 1;
@@ -32,66 +33,40 @@
   opacity: 0;
 }
 
+/* 🖼️ Profile Image */
 .imageSection {
-  animation: popInScale 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards; /* Back ease-out for bouncy pop */
+  animation: popInScale 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
 }
 
+.profileImage {
+  border-radius: 50%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+.profileImage:hover {
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ✨ Text Section */
 .textSection {
   animation: fadeInSlide 1s ease-out 0.8s forwards;
   flex-direction: column;
   text-align: left;
-  padding: 2rem;
+  padding: 2.5rem;
+  max-width: 550px;
 }
 
-/* Update in styles/Home.module.css */
-.profileImage {
-  border-radius: 50%; /* Changed from 20px to 50% for perfect circle */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-  aspect-ratio: 1; /* Ensures square aspect if image isn't naturally square */
-  object-fit: cover; /* Crops image to fill circle without distortion */
-}
-
-.profileImage:hover {
-  transform: scale(1.05) translateY(-5px); /* Subtle hover lift */
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2), 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Pop-in scale animation for image: starts at scale 0, pops out fast to 1 with overshoot */
-@keyframes popInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0) rotate(5deg); /* Slight initial rotation for dynamism */
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.1) rotate(-2deg); /* Overshoot for bounce */
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-}
-
-/* Slide-in fade for text section */
-@keyframes fadeInSlide {
-  0% {
-    opacity: 0;
-    transform: translateX(30px) translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) translateY(0);
-  }
-}
-
+/*  Hero Title */
 .heroTitle {
-  font-size: 3.5rem; /* Slightly larger for impact */
-  font-weight: 700; /* Bold for emphasis */
-  color: #013b6b ;/* Gradient text for vibrancy */
-  background-clip: text;
-  margin-bottom: 1.5rem;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: #013b6b;
   line-height: 1.2;
+  margin-bottom: 1.2rem;
   position: relative;
 }
 
@@ -109,18 +84,19 @@
 }
 
 .textSection:hover .heroTitle::after {
-  transform: scaleX(1); /* Underline reveal on hover */
+  transform: scaleX(1);
 }
 
+/* 🌟 Highlighted Name */
 .highlightName {
+  color:  #013b6b;
   position: relative;
-  display: inline-block;
 }
 
 .highlightName::before {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -8px;
   left: 0;
   right: 0;
   height: 3px;
@@ -131,24 +107,37 @@
 }
 
 .textSection:hover .highlightName::before {
-  transform: scaleX(1); /* Highlight underline on hover */
+  transform: scaleX(1);
 }
 
+/* ⌨️ Typewriter Subtitle */
 .heroSubtitle {
-  font-size: 1.3rem;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 0;
-}
-
-.welcomeText {
+  font-size: 1.4rem;
   color: #333;
-  font-weight: 500; /* Slightly bolder for the welcome */
-  display: block;
-  margin-top: 0.5rem;
-  animation: pulseGlow 2s ease-in-out infinite alternate; /* Subtle glow pulse for the key phrase */
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  min-height: 40px; /* prevents layout jump while typing */
 }
 
+/* 📜 Description */
+.heroDescription {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  margin-top: 1rem;
+  max-width: 95%;
+}
+
+/* 🌟 Welcome Text */
+.welcomeText {
+  color: #013b6b;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 0.5rem;
+  animation: pulseGlow 2s ease-in-out infinite alternate;
+}
+
+/* 💫 Animations */
 @keyframes pulseGlow {
   from {
     text-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
@@ -158,30 +147,60 @@
   }
 }
 
-@media (max-width: 768px) {
+@keyframes popInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(5deg);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes fadeInSlide {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 900px) {
   .container {
     flex-direction: column;
-    padding: 1rem;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .textSection {
+    padding: 1.5rem;
+    max-width: 100%;
   }
 
   .heroTitle {
     font-size: 2.5rem;
-    text-align: center;
   }
 
   .heroSubtitle {
     font-size: 1.1rem;
-    text-align: center;
   }
 
-  .textSection {
-    padding: 1rem;
-    text-align: center;
+  .heroDescription {
+    font-size: 0.95rem;
   }
 
   .profileImage {
-    width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
+    width: 80%;
+    max-width: 250px;
+    margin-bottom: 1.5rem;
   }
 }
