@@ -1,6 +1,9 @@
 /* about.css */
 
 /* Global resets and base styles */
+body{
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +11,14 @@
 }
 
 .about-container {
-  max-width: 800px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 60px 20px;
   font-family: 'Georgia', 'Times New Roman', Times, serif;
   line-height: 1.7;
   color: #333;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -84,7 +88,7 @@
 
 /* Details Section */
 .about-details {
-  background: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);

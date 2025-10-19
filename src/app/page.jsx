@@ -2,12 +2,14 @@
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Home  from "@/Home/page";
+import AboutSection from "@/About/page";
 
 export default function Page() {
   return (
     <>
       <Navbar />
         <Home/>
+        <AboutSection/>
     </>
   );
 }
