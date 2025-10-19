@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import './about.css'; // External CSS file
+import '../styles/about.css'; // External CSS file
 
 export default function AboutSection() {
   const [expanded, setExpanded] = useState(false);
