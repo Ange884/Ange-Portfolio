@@ -10,10 +10,10 @@
   max-width: 900px;
   margin: 0 auto;
   padding: 60px 20px;
-  font-family: 'Georgia', 'Times New Roman', Times, serif;
+  font-family: 'poppins',sans-serif;
   line-height: 1.7;
   color: #333;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: #fff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
