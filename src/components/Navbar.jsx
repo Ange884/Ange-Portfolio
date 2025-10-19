@@ -2,12 +2,14 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import "../styles/Navbar.css";
+import { href } from 'react-router-dom';
 
 export default function Navbar() {
   const pathname = usePathname();
   const links = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
+    {name: 'skills' , href: '#skills'},
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
   ];
