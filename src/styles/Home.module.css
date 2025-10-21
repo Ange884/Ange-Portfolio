@@ -8,7 +8,7 @@
   justify-content: center;
   padding: 3rem;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #f5f7fa 0%, #cac9c9 100%);
   overflow-x: hidden;
   position: relative;
 }
@@ -64,7 +64,7 @@
 .heroTitle {
   font-size: 3.2rem;
   font-weight: 700;
-  color: #013b6b;
+  color: #1c1c1d;
   line-height: 1.2;
   margin-bottom: 1.2rem;
   position: relative;
@@ -89,7 +89,7 @@
 
 /* 🌟 Highlighted Name */
 .highlightName {
-  color:  #013b6b;
+ color: #1c1c1d;
   position: relative;
 }
 
