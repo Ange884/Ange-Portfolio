@@ -1,6 +1,9 @@
 /* styles/Home.module.css */
 
 /* 🌈 Overall Layout */
+body{
+  color: #fff;
+}
 .container {
   display: flex;
   height: 100vh;
@@ -8,7 +11,7 @@
   justify-content: center;
   padding: 3rem;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #cac9c9 100%);
+  background: #000;
   overflow-x: hidden;
   position: relative;
 }
@@ -64,7 +67,7 @@
 .heroTitle {
   font-size: 3.2rem;
   font-weight: 700;
-  color: #1c1c1d;
+  color: #fff;
   line-height: 1.2;
   margin-bottom: 1.2rem;
   position: relative;
@@ -89,7 +92,7 @@
 
 /* 🌟 Highlighted Name */
 .highlightName {
- color: #1c1c1d;
+ color: #fff;
   position: relative;
 }
 
@@ -113,7 +116,7 @@
 /* ⌨️ Typewriter Subtitle */
 .heroSubtitle {
   font-size: 1.4rem;
-  color: #333;
+  color: #fff;
   font-weight: 500;
   margin-bottom: 1.2rem;
   min-height: 40px; /* prevents layout jump while typing */
@@ -122,7 +125,7 @@
 /* 📜 Description */
 .heroDescription {
   font-size: 1rem;
-  color: #444;
+  color: #fff;
   line-height: 1.7;
   margin-top: 1rem;
   max-width: 95%;
