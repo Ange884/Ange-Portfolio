@@ -11,7 +11,7 @@ export default function Home() {
       <div className={styles.container}>
         <div className={styles.imageSection}>
           <Image
-            src="/images/Ange.jpg"
+            src="/images/ANge.png"
             alt="Your Portrait"
             width={400}
             height={400}
