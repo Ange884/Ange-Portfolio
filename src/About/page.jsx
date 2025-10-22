@@ -1,13 +1,14 @@
 "use client";
 
 import styles from "../styles/about.module.css";
+import { StarsBackground } from "@/components/shooting-stars";
 
 export default function AboutPage() {
   return (
     <section className={styles.aboutSection}>
       <div className={styles.aboutImage}>
         <img
-          src="/profile.jpg" // Put your image in /public/profile.jpg
+          src="/images/Ange.jpg" // Put your image in /public/profile.jpg
           alt="About me"
         />
       </div>
