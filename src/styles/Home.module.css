@@ -47,12 +47,14 @@ body{
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
   aspect-ratio: 1;
   object-fit: cover;
+  width: 350px;
+  height: 350px;
 }
 
-.profileImage:hover {
+/* .profileImage:hover {
   transform: scale(1.05) translateY(-5px);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
-}
+} */
 
 /* ✨ Text Section */
 .textSection {
