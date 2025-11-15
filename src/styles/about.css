@@ -1,0 +1,103 @@
+/* ===== ABOUT SECTION ===== */
+.about-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 50px 20px;
+  background: #ffffff;
+  flex-wrap: wrap;
+}
+
+/* LEFT IMAGE */
+.left-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image {
+  border-radius: 20px;
+  object-fit: cover;
+  max-width: 100%;
+}
+
+/* RIGHT CONTENT */
+.about-right {
+  flex: 2 1 600px;
+  max-height: 500px;
+}
+
+.about-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #22495a;
+}
+
+.about-subheading {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #70a9a1;
+  
+}
+
+.about-right p {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: #22495a;
+  margin-bottom: 20px;
+}
+
+/* FEATURES GRID */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.feature-icon {
+  flex-shrink: 0;
+}
+
+.feature-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #22495a;
+  margin: 0;
+}
+
+.feature-desc {
+  font-size: 0.95rem;
+  color: #22495a;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* DOWNLOAD BUTTON */
+.about-button {
+  margin-top: 30px;
+}
+
+.about-button .button {
+  padding: 6px 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  background: #70a9a1;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.about-button .button:hover {
+  background: #5b8f88;
+  transform: translateY(-3px) scale(1.05);
+}
