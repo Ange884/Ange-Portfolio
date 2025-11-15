@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import AngeImage from "../../public/images/Ange.jpg"; // make sure this is a proper image file like .png/.jpg
+import AngeImage from "../../public/images/Ange.jpeg"; // make sure this is a proper image file like .png/.jpg
 import { FaLaptopCode, FaMobileAlt, FaPaintBrush, FaRocket } from "react-icons/fa";
 import "../styles/about.css";
 
@@ -33,7 +33,7 @@ export default function AboutSection() {
     <section className="about-section" id="about">
       {/* LEFT IMAGE */}
       <div className="left-image">
-        <Image src={AngeImage} alt="Nziza Ange" width={400} height={400} className="profile-image" />
+        <Image src={AngeImage} alt="Nziza Ange"  className="profile-image" />
       </div>
 
       {/* RIGHT CONTENT */}
