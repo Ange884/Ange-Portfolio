@@ -8,6 +8,24 @@
   gap: 25px;
   background: #22495a;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle background pulse (optional enhancement) */
+.home::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: radial-gradient(circle at center, rgba(112,169,161,0.15) 0%, transparent 70%);
+  animation: pulseBg 8s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pulseBg {
+  0% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(1.3); opacity: 0.1; }
 }
 
 /* MAIN HEADING */
@@ -16,6 +34,17 @@
   font-weight: 700;
   color: #fff;
   line-height: 1.1;
+  position: relative;
+  z-index: 1;
+  /* Enhanced entrance */
+  animation: fadeInUp 0.8s ease forwards;
+  opacity: 0;
+}
+
+/* Hover glow + slight lift */
+.main-heading:hover {
+  transform: translateY(-5px);
+  transform: scale(1.2);
 }
 
 /* SUB HEADING */
@@ -25,6 +54,26 @@
   color: #fff;
   max-width: 700px;
   opacity: 0.9;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease 0.2s forwards;
+  opacity: 0;
+}
+
+/* Hover underline animation */
+.sub-heading::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #70a9a1;
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+}
+.sub-heading:hover::after {
+  width: 60%;
 }
 
 /* BUTTONS WRAPPER */
@@ -32,6 +81,10 @@
   display: flex;
   gap: 20px;
   margin-top: 20px;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease 0.4s forwards;
+  opacity: 0;
 }
 
 /* VIEW BUTTON */
@@ -44,16 +97,35 @@
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
-  font-family: "poppins" , sans-serif;
+  transition: all 0.35s ease;
+  font-family: "poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ripple effect on click + enhanced hover */
+.view::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  pointer-events: none;
+}
+.view:active::before {
+  width: 300px;
+  height: 300px;
 }
 
 .view:hover {
   background: #5b8f88;
-  transform: translateY(-3px);
+  transform: translateY(-4px) scale(1.05);
 }
 
-/* GET IN TOUCH BUTTON */
+/* TOUCH BUTTON */
 .touch {
   padding: 14px 32px;
   background: transparent;
@@ -63,23 +135,51 @@
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s ease;
-  font-family: "poppins" , sans-serif;
+  transition: all 0.35s ease;
+  font-family: "poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fill-on-hover with wave effect */
+.touch::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(78,136,128,0.4), transparent);
+  transition: none;
+}
+.touch:hover::before {
+  left: 100%;
+  transition: left 0.7s ease;
 }
 
 .touch:hover {
-  background: #22495a;
+  background: #4e8880;
   color: white;
-  transform: translateY(-3px);
+  border-color: transparent;
+  transform: translateY(-4px) scale(1.05);
 }
 
-/* Smooth fade animation (optional) */
-.home * {
-  animation: fadeIn 0.6s ease forwards;
+/* Enhanced staggered fade-in */
+.home > * {
+  animation: fadeInUp 0.8s ease forwards;
   opacity: 0;
 }
+.home > *:nth-child(1) { animation-delay: 0.1s; }
+.home > *:nth-child(2) { animation-delay: 0.3s; }
+.home > *:nth-child(3) { animation-delay: 0.5s; }
 
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
