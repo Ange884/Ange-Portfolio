@@ -62,10 +62,17 @@
   object-fit: cover;
   border-radius: 12px;
 }
+.field{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* Title */
 .project-title {
-  margin-top: 15px;
   font-size: 1.3rem;
   font-weight: 600;
   color:#1f3633;
@@ -73,7 +80,6 @@
 
 /* Description */
 .description {
-  margin-top: 10px;
   font-size: 0.95rem;
   color: #555;
   line-height: 1.5;

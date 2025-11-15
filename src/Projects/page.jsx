@@ -1,4 +1,5 @@
 'use client'
+import { Cagliostro } from "next/font/google";
 import "../styles/projects.css"
 
 export default function ProjectsSection() {
@@ -9,8 +10,10 @@ export default function ProjectsSection() {
       title: "ShopFlow Platform",
       description:
         "A full-featured e-commerce platform with real-time inventory management and a seamless checkout experience.",
-      image: "/images/shopflow.jpg",
-      link: "/projects/shopflow"
+      image: "/images/cash.jpg",
+      link: "/projects/shopflow",
+      tech: "React Js",
+      Category: "E-Commerce"
     },
     {
       id: 2,
@@ -18,15 +21,19 @@ export default function ProjectsSection() {
       description:
         "A student and teacher portal with dashboards, role-based access, course management, and analytics.",
       image: "/images/loans.jpg",
-      link: "/projects/educonnect"
+      link: "/projects/educonnect",
+      tech: "React Native",
+      Category: "E-Commerce"
     },
     {
       id: 3,
       title: "MotherLink System",
       description:
         "A health and emergency management system for supporting mothers with real-time assistance and verified records.",
-      image: "/images/motherlink.png",
-      link: "/projects/motherlink"
+      image: "/images/Mom.jpg",
+      link: "/projects/motherlink",
+      tech: "React Native",
+      Category: "Health"
     },
     {
       id: 4,
@@ -34,7 +41,9 @@ export default function ProjectsSection() {
       description:
         "A beautiful travel booking platform for flights, hotels, and trip planning with a smooth UI/UX.",
       image: "/images/travelease.png",
-      link: "/projects/travelease"
+      link: "/projects/travelease",
+      tech: "Next Js",
+      Category: "Finance"
     }
   ];
 
@@ -51,7 +60,10 @@ export default function ProjectsSection() {
         {featuredProjects.map((project) => (
           <div className="project-card" key={project.id}>
             <img src={project.image} alt={project.title} />
-
+              <div className="field">
+                <h4 className="tech">{project.tech}</h4>
+                <h4 className="category">{project.Category}</h4>
+                </div>
             <h3 className="project-title">{project.title}</h3>
 
             <p className="description">{project.description}</p>
