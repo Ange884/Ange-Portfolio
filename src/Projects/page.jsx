@@ -9,15 +9,15 @@ export default function ProjectsSection() {
       title: "ShopFlow Platform",
       description:
         "A full-featured e-commerce platform with real-time inventory management and a seamless checkout experience.",
-      image: "/images/shopflow.png",
+      image: "/images/shopflow.jpg",
       link: "/projects/shopflow"
     },
     {
       id: 2,
-      title: "EduConnect Portal",
+      title: "House-Fund Automata",
       description:
         "A student and teacher portal with dashboards, role-based access, course management, and analytics.",
-      image: "/images/educonnect.png",
+      image: "/images/loans.jpg",
       link: "/projects/educonnect"
     },
     {
@@ -40,7 +40,7 @@ export default function ProjectsSection() {
 
   return (
     <div className="projects">
-      <h1 className="heading">Portfolio</h1>
+      <div className="heading">Portfolio</div>
       <h1 className="project-heading">Featured Projects</h1>
       <p className="intro">
         Showcasing my latest work in web development, <br />
@@ -52,7 +52,7 @@ export default function ProjectsSection() {
           <div className="project-card" key={project.id}>
             <img src={project.image} alt={project.title} />
 
-            <h3 className="sub-heading">{project.title}</h3>
+            <h3 className="project-title">{project.title}</h3>
 
             <p className="description">{project.description}</p>
 

@@ -7,19 +7,25 @@
 /* Headings */
 .heading {
   font-size: 1.2rem;
-  color: #666;
+  color: #70a9a1;
   font-weight: 500;
+  background: #f9fafb;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  margin:auto;
 }
 
 .project-heading {
   font-size: 2.4rem;
   margin-top: 5px;
   font-weight: bolder;
+  color: #22495a;
 }
 
 .intro {
   margin-top: 10px;
-  color: #444;
+  color: #2e524d;
   font-size: 1rem;
 }
 
@@ -52,16 +58,17 @@
 /* Image */
 .project-card img {
   width: 100%;
-  height: 180px;
+  height: 300px;
   object-fit: cover;
   border-radius: 12px;
 }
 
 /* Title */
-.sub-heading {
+.project-title {
   margin-top: 15px;
   font-size: 1.3rem;
   font-weight: 600;
+  color:#1f3633;
 }
 
 /* Description */
