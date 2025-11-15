@@ -1,0 +1,97 @@
+/* Container */
+.projects {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+/* Headings */
+.heading {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.project-heading {
+  font-size: 2.4rem;
+  margin-top: 5px;
+  font-weight: bolder;
+}
+
+.intro {
+  margin-top: 10px;
+  color: #444;
+  font-size: 1rem;
+}
+
+/* GRID — 2 per row */
+.projects-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* EXACTLY 2 per row */
+  gap: 25px;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Project Card */
+.project-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.1);
+}
+
+/* Image */
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Title */
+.sub-heading {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Description */
+.description {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Button */
+.pbutton{
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #22495a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.pbutton a {
+ text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  font-family: 'poppins', sans-serif;
+}
+
+/* RESPONSIVE — phones (1 column) */
+@media (max-width: 640px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* 1 per row on mobile */
+  }
+}
