@@ -1,6 +1,7 @@
 'use client'
 import { Cagliostro } from "next/font/google";
-import "../styles/projects.css"
+import "../styles/projects.css";
+import { FaLink, FaGithub } from "react-icons/fa";
 
 export default function ProjectsSection() {
 
@@ -60,6 +61,10 @@ export default function ProjectsSection() {
         {featuredProjects.map((project) => (
           <div className="project-card" key={project.id}>
             <img src={project.image} alt={project.title} />
+            <div className="overlay">
+              <a href={project.link} className="overlay-btn"><FaLink/></a>
+              <a href={project.link} className="overlay-btn"><FaGithub/></a>
+            </div>
               <div className="field">
                 <h4 className="tech">{project.tech}</h4>
                 <h4 className="category">{project.Category}</h4>
