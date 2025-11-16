@@ -9,11 +9,13 @@
   font-size: 1.2rem;
   color: #70a9a1;
   font-weight: 500;
-  background: #f9fafb;
+  background: #ebf2f1;
   width: 100px;
   align-items: center;
   justify-content: center;
   margin:auto;
+  padding: 1px 1px;
+  border-radius: 20px;
 }
 
 .project-heading {
@@ -65,11 +67,24 @@
 .field{
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 190px;
     justify-content: center;
     align-items: center;
 }
-
+.tech{
+  color: #70a9a1;
+  background-color: #ebf2f1;
+  width: 120px;
+  padding: 2px;
+  border-radius: 20px;
+}
+.category{
+  color: #1f3633;
+  background-color: #d9dbdb;
+  width: 125px;
+  padding: 2px;
+  border-radius: 20px;
+}
 
 /* Title */
 .project-title {
@@ -100,6 +115,83 @@
   color: #fff;
   font-weight: 500;
   font-family: 'poppins', sans-serif;
+}
+.viewbtn {
+  padding: 10px 26px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-weight: 400;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background-color: #4c817a;
+  font-family: "poppins" , sans-serif;
+}
+
+.viewbtn:hover {
+  transform: translateY(-3px);
+}
+
+/* Wrap image only */
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+/* Keep image responsive */
+.image-wrapper img {
+  width: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom on hover */
+.image-wrapper:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay ONLY inside image area */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+/* Show overlay only when hovering the image area */
+.image-wrapper:hover .overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Icon Buttons */
+.icon-btn {
+  width: 40px;
+  height:40px;
+  background: #4c817a;
+  color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.icon-btn:hover {
+  transform: scale(1.15);
 }
 
 /* RESPONSIVE — phones (1 column) */

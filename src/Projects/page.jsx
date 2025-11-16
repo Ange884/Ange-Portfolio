@@ -58,26 +58,34 @@ export default function ProjectsSection() {
       </p>
 
       <div className="projects-grid">
-        {featuredProjects.map((project) => (
-          <div className="project-card" key={project.id}>
-            <img src={project.image} alt={project.title} />
-            <div className="overlay">
-              <a href={project.link} className="overlay-btn"><FaLink/></a>
-              <a href={project.link} className="overlay-btn"><FaGithub/></a>
-            </div>
-              <div className="field">
-                <h4 className="tech">{project.tech}</h4>
-                <h4 className="category">{project.Category}</h4>
-                </div>
-            <h3 className="project-title">{project.title}</h3>
+  {featuredProjects.map((project) => (
+    <div className="project-card" key={project.id}>
 
-            <p className="description">{project.description}</p>
+      {/* IMAGE + OVERLAY WRAPPER */}
+      <div className="image-wrapper">
+        <img src={project.image} alt={project.title} />
 
-            <button className="pbutton">
-              <a href={project.link}>View Project</a>
-            </button>
-          </div>
-        ))}
+        <div className="overlay">
+          <a href={project.link} className="icon-btn">
+            <FaLink />
+          </a>
+          <a href={project.github} className="icon-btn">
+            <FaGithub />
+          </a>
+        </div>
+      </div>
+
+      <div className="field">
+        <h4 className="tech">{project.tech}</h4>
+        <h4 className="category">{project.Category}</h4>
+      </div>
+
+      <h3 className="project-title">{project.title}</h3>
+      <p className="description">{project.description}</p>
+      <button className="viewbtn">view Project</button>
+
+    </div>
+  ))}
       </div>
     </div>
   );
