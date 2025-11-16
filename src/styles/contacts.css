@@ -7,6 +7,7 @@
   justify-content: space-between;
   margin-top: 40px;
   gap: 50px;
+  align-items: flex-start; /* Align items at the top for better vertical alignment */
 }
 
 .left-part {
@@ -33,13 +34,19 @@
 
 /* Right Side Form */
 .right-part {
-  flex: 1.2;
+  flex: 1; /* Reduced from 1.2 to 1 to balance with left-part */
+  max-width: 500px; /* Limit form width for a smaller appearance */
 }
 
 .contacts-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 20px; /* Add padding inside the form for spacing */
+  border: 1px solid #ccc; /* Subtle border for the form */
+  border-radius: 12px; /* Rounded corners to match input fields */
+  background: #f9f9f9; /* Light background to make form stand out */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Optional: subtle shadow for depth */
 }
 
 .contacts-form .row {
@@ -80,4 +87,20 @@
   margin-top: 40px;
   font-size: 14px;
   opacity: 0.7;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .right-part {
+    max-width: 100%; /* Full width on smaller screens */
+  }
+
+  .contacts-form {
+    padding: 15px; /* Slightly less padding on mobile */
+  }
 }
