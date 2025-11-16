@@ -40,7 +40,7 @@ export default function ProjectsSection() {
       title: "TravelEase Booking",
       description:
         "A beautiful travel booking platform for flights, hotels, and trip planning with a smooth UI/UX.",
-      image: "/images/travelease.png",
+      image: "/images/travel.png",
       link: "/projects/travelease",
       tech: "Next Js",
       Category: "Finance"
