@@ -1,7 +1,7 @@
 'use client'
 import { Cagliostro } from "next/font/google";
 import "../styles/projects.css";
-import { FaLink, FaGithub } from "react-icons/fa";
+import { FaLink, FaGithub, FaArrowRight } from "react-icons/fa";
 
 export default function ProjectsSection() {
 
@@ -86,7 +86,7 @@ export default function ProjectsSection() {
 
       <h3 className="project-title">{project.title}</h3>
       <p className="description">{project.description}</p>
-      <button className="viewbtn">view Project</button>
+      <button className="viewbtn">view Project <FaArrowRight className="arrow-icon" /></button>
 
     </div>
   ))}

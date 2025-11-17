@@ -17,7 +17,7 @@ export default function Navbar() {
         {links.map((link) => (
           <li key={link.name}>
             <a href={link.href} className="navbar-link">
-              {link.name}
+              <span className="navbar-link-text">{link.name}</span>
             </a>
           </li>
         ))}
