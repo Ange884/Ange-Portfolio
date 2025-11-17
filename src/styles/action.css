@@ -13,8 +13,8 @@
     font-size: 40px;
 }
 .project-collab p {
-  margin-top: 0;       /* removes extra space at the top */
-  margin-bottom: 15px; /* space before button */
+  margin-top: 0;       
+  margin-bottom: 15px;
   line-height: 1.6;
 }
 
@@ -30,9 +30,17 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-family: "poppins" , sans-serif;
 }
 
 .cta-button:hover {
   background-color: #f0f0f0;
   transform: scale(1.05);
 }
+
+.arrow-icon {
+  margin-left: 8px;
+  font-size: 14px;
+  align-items: center;
+}
+
