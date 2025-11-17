@@ -12,6 +12,12 @@
 .cta-title{
     font-size: 40px;
 }
+.project-collab p {
+  margin-top: 0;       /* removes extra space at the top */
+  margin-bottom: 15px; /* space before button */
+  line-height: 1.6;
+}
+
 
 .cta-button {
   margin-top: 15px;
