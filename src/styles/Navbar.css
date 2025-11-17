@@ -80,7 +80,6 @@
 .navbar-link:hover {
   color: #70a9a1; 
   transform: translateY(-4px) scale(1.08);
-  background-color: rgba(112, 169, 161, 0.08);
 }
 
 /* Link text with exaggerated underline effect */
@@ -94,32 +93,18 @@
 .navbar-link-text::after {
   content: '';
   position: absolute;
+  bottom: -4px;
   left: 50%;
   transform: translateX(-50%);
   height: 3px;
+  background: linear-gradient(90deg, transparent, #70a9a1, #22495a, #70a9a1, transparent);
   border-radius: 2px;
+  width: 0;
   transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   z-index: -1;
 }
 
-.navbar-link-text::before {
-  top: -2px;
-  width: 0;
-  animation: none;
-}
-
-.navbar-link-text::after {
-  bottom: -4px;
-  width: 0;
-  animation: none;
-}
-
 /* Hover effect: exaggerated expansion from center with bounce */
-.navbar-link:hover .navbar-link-text::before {
-  width: 120%;
-  animation: shimmer 0.8s ease-in-out;
-}
-
 .navbar-link:hover .navbar-link-text::after {
   width: 120%;
   animation: expandBounce 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -140,22 +125,11 @@
   }
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
-  }
-}
-
 /* Active state for current page (optional, can be added via JS or router) */
 .navbar-link.active {
   color: #70a9a1;
-  background-color: rgba(112, 169, 161, 0.1);
 }
 
-.navbar-link.active .navbar-link-text::before,
 .navbar-link.active .navbar-link-text::after {
   width: 100%;
   background: linear-gradient(90deg, transparent, #70a9a1, transparent);

@@ -6,6 +6,24 @@
   padding: 40px;
   background: #ffffff;
   flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Entrance animation for the entire section */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-section {
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
 /* LEFT IMAGE */
@@ -34,6 +52,8 @@
   position: relative;
   z-index: 1;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  animation: fadeInUp 0.7s ease-out 0.2s forwards;
 }
 
 /* RIGHT CONTENT */
@@ -41,26 +61,43 @@
   flex: 1 1 600px;
   max-height: 500px;
   margin-right: 2.2rem;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 0.8s ease-out 0.3s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .about-heading {
   font-size: 1.1rem;
   font-weight: 700;
   color: #22495a;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease-out 0.4s forwards;
 }
 
 .about-subheading {
   font-size: 1rem;
   font-weight: 500;
   color: #70a9a1;
-  
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease-out 0.5s forwards;
 }
 
 .about-right p {
   font-size: 0.8rem;
   line-height: 1.7;
   color: #22495a;
-  
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease-out 0.6s forwards;
 }
 
 /* FEATURES GRID */
@@ -69,13 +106,23 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
   margin: 30px 0;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.7s ease-out 0.7s forwards;
 }
 
 .feature {
   display: flex;
   align-items: flex-start;
   gap: 15px;
+  opacity: 0;
+  transform: translateY(10px);
 }
+
+.features .feature:nth-child(1) { animation: slideUp 0.5s ease-out 0.8s forwards; }
+.features .feature:nth-child(2) { animation: slideUp 0.5s ease-out 0.9s forwards; }
+.features .feature:nth-child(3) { animation: slideUp 0.5s ease-out 1s forwards; }
+.features .feature:nth-child(4) { animation: slideUp 0.5s ease-out 1.1s forwards; }
 
 .feature-icon {
   flex-shrink: 0;
@@ -98,6 +145,9 @@
 /* DOWNLOAD BUTTON */
 .about-button {
   margin-top: 30px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.6s ease-out 1.2s forwards;
 }
 
 .about-button .button {
