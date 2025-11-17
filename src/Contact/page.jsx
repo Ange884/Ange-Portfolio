@@ -24,19 +24,22 @@ export default function ContactSection() {
   return (
     <div className="contacts">
       <div className="background-content">
-
-        <h1 className="touch">Get in Touch</h1>
-        <h1 className="big-head">Let's Create Something <br/> Amazing Together</h1>
-
-        <p>
-          Get in touch with me for collaborations, projects, or opportunities. <br />
-          I'd love to connect and bring ideas to life together.
-        </p>
-
         <div className="contact-wrapper">
 
           {/* LEFT SIDE — Address + copyright */}
           <section className="left-part">
+            <div className="intro">
+              <h1 className="touch">Get in Touch</h1>
+              <h1 className="big-head">
+                Let's Create Something <br /> Amazing Together
+              </h1>
+
+              <p>
+                Get in touch with me for collaborations, projects, or opportunities. <br />
+                I'd love to connect and bring ideas to life together.
+              </p>
+            </div>
+
             {Address.map((address, index) => (
               <div className="contact-item" key={index}>
                 <div className="icon">{address.icon}</div>
