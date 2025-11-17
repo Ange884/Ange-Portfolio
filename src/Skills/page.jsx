@@ -32,20 +32,20 @@ export default function Skills() {
     { name: "React Native", icon: <FaMobileAlt />, category: "Mobile" },
 
     { name: "Figma", icon: <FaFigma />, category: "Design" },
-    { name: "Git/GitHub", icon: <SiAdobephotoshop />, category: "Others" },
-    { name: "Git/GitHub", icon: <SiAdobexd />, category: "Others" },
+    { name: "Photoshop", icon: <SiAdobephotoshop />, category: "Design" },
+    { name: "Adobe XD", icon: <SiAdobexd />, category: "Design" },
 
-    { name: "Git/GitHub", icon: <SiFlutter />, category: "Others" },
-    { name: "Git/GitHub", icon: <SiNextdotjs />, category: "Others" },
-    { name: "Git/GitHub", icon: <SiTailwindcss/>, category: "Others" },
-    { name: "Git/GitHub", icon: <SiMysql />, category: "Others" },
-    { name: "Git/GitHub", icon: <SiPostgresql />, category: "Others" },
+    { name: "Flutter", icon: <SiFlutter />, category: "Mobile" },
+    { name: "Next Js", icon: <SiNextdotjs />, category: "Frontend" },
+    { name: "Tailwind Css", icon: <SiTailwindcss/>, category: "Frontend" },
+    { name: "MySql", icon: <SiMysql />, category: "Others" },
+    { name: "Postgresql", icon: <SiPostgresql />, category: "Others" },
 
     { name: "Git/GitHub", icon: <FaGithub />, category: "Others" },
-    { name: "Git/GitHub", icon: <FaJava />, category: "backend" },
-    { name: "Git/GitHub", icon: <SiC />, category: "Others" },
-    { name: "Git/GitHub", icon: <SiPhp />, category: "Others" },
-    { name: "Git/GitHub", icon: <SiCplusplus />, category: "Others" },
+    { name: "JAVA", icon: <FaJava />, category: "Backend" },
+    { name: "C", icon: <SiC />, category: "Others" },
+    { name: "PHP", icon: <SiPhp />, category: "Others" },
+    { name: "C++", icon: <SiCplusplus />, category: "Others" },
   ];
 
   const [activeCategory, setActiveCategory] = useState("All");
