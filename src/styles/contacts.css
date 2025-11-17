@@ -21,7 +21,7 @@
 /* ================================
    HEADINGS
 ================================ */
-.touch {
+.contacts-touch {
   font-size: 18px;
   color: #70A9A1;
   margin-bottom: 8px;
@@ -38,7 +38,7 @@
   font-size: 16px;
   opacity: 0.8;
   line-height: 1.6;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
 }
 
 /* ================================
@@ -65,14 +65,14 @@
 }
 
 .left-part .intro {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 .icon {
@@ -82,11 +82,6 @@
   background: #e7f3f2;
   padding: 10px;
   border-radius: 12px;
-}
-.info{
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
 }
 
 .info h4 {

@@ -29,7 +29,7 @@ export default function ContactSection() {
           {/* LEFT SIDE — Address + copyright */}
           <section className="left-part">
             <div className="intro">
-              <h1 className="touch">Get in Touch</h1>
+              <h1 className="contacts-touch">Get in Touch</h1>
               <h1 className="big-head">
                 Let's Create Something <br /> Amazing Together
               </h1>
