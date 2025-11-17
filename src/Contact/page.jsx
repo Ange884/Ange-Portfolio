@@ -2,8 +2,52 @@
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import "../styles/contacts.css";
 import { FaInstagram, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
+import { useEffect, useRef } from "react";
 
 export default function ContactSection() {
+  const leftPartRef = useRef(null);
+  const rightPartRef = useRef(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px',
+    };
+
+    const leftObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-left');
+          leftObserver.unobserve(entry.target);
+        }
+      },
+      observerOptions
+    );
+
+    const rightObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-right');
+          rightObserver.unobserve(entry.target);
+        }
+      },
+      observerOptions
+    );
+
+    if (leftPartRef.current) {
+      leftObserver.observe(leftPartRef.current);
+    }
+
+    if (rightPartRef.current) {
+      rightObserver.observe(rightPartRef.current);
+    }
+
+    return () => {
+      if (leftPartRef.current) leftObserver.unobserve(leftPartRef.current);
+      if (rightPartRef.current) rightObserver.unobserve(rightPartRef.current);
+    };
+  }, []);
+
   const Address = [
     {
       icon: <FiMail color="#70A9A1" size={21} />,
@@ -27,7 +71,7 @@ export default function ContactSection() {
         <div className="contact-wrapper">
 
           {/* LEFT SIDE — Address + copyright */}
-          <section className="left-part">
+          <section className="left-part" ref={leftPartRef}>
             <div className="intro">
               <h1 className="contacts-touch">Get in Touch</h1>
               <h1 className="big-head">
@@ -40,15 +84,18 @@ export default function ContactSection() {
               </p>
             </div>
 
-            {Address.map((address, index) => (
-              <div className="contact-item" key={index}>
-                <div className="icon">{address.icon}</div>
-                <div className="info">
-                  <h4>{address.name}</h4>
-                  <p>{address.details}</p>
+            <div className="contact-details">
+              {Address.map((address, index) => (
+                <div className="contact-item" key={index}>
+                  <div className="icon">{address.icon}</div>
+                  <div className="info">
+                    <h4>{address.name}</h4>
+                    <p>{address.details}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
+
             <div className="follow">
               <a
                 href="https://instagram.com"
@@ -89,7 +136,7 @@ export default function ContactSection() {
           </section>
 
           {/* RIGHT SIDE — Form */}
-          <section className="right-part">
+          <section className="right-part" ref={rightPartRef}>
             <form className="contacts-form">
               <div className="row">
                 <input type="text" placeholder="First Name" />
