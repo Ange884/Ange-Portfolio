@@ -106,11 +106,16 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
+  max-width: 400px;
   padding: 25px;
   border: 1px solid #dcdcdc;
   border-radius: 14px;
   background: #ffffff;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  max-height: 500px;
+  font-family: "poppins", sans-serif;
+  margin-bottom: 20px;
 }
 
 /* ROW FOR FIRST/LAST NAME */
@@ -121,8 +126,8 @@
 }
 
 /* INPUTS & TEXTAREA */
-.contacts-form input,
-.contacts-form textarea {
+.contacts-form input
+ {
   width: 83%;
   padding: 14px 16px;
   border-radius: 10px;
@@ -131,6 +136,18 @@
   font-size: 15px;
   outline: none;
   transition: 0.2s;
+  font-family: "poppins", sans-serif;
+}
+.contacts-form textarea{
+  width: 83%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid #d0d0d0;
+  background: #fafafa;
+  font-size: 15px;
+  outline: none;
+  transition: 0.2s;
+  font-family: "poppins", sans-serif;
 }
 
 .contacts-form input:focus,
@@ -155,6 +172,8 @@
   font-weight: 600;
   font-size: 16px;
   transition: 0.3s;
+  width: 92%;
+  font-family: "poppins", sans-serif;
 }
 
 .send-btn:hover {
