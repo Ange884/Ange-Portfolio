@@ -6,6 +6,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  background: #f5f7f8; /* optional subtle background */
 }
 
 .background-content {
@@ -13,6 +14,8 @@
   max-width: 1200px;
   margin: auto;
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ================================
@@ -44,9 +47,10 @@
 .contact-wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: flex-start; /* top-align left & right */
   gap: 60px;
   margin-top: 45px;
+  flex-wrap: wrap;
 }
 
 /* ================================
@@ -54,6 +58,9 @@
 ================================ */
 .left-part {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   padding: 15px;
 }
 
@@ -98,6 +105,9 @@
 ================================ */
 .right-part {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* aligns with top of heading */
   max-width: 520px;
 }
 
@@ -106,29 +116,27 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  max-width: 400px;
   padding: 25px;
   border: 1px solid #dcdcdc;
   border-radius: 14px;
   background: #ffffff;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  align-items: center;
-  max-height: 500px;
-  font-family: "poppins", sans-serif;
-  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+  font-family: "Poppins", sans-serif;
 }
 
 /* ROW FOR FIRST/LAST NAME */
 .contacts-form .row {
   display: flex;
   gap: 18px;
-  width: 90%;
+  width: 100%;
 }
 
 /* INPUTS & TEXTAREA */
-.contacts-form input
- {
-  width: 83%;
+.contacts-form input,
+.contacts-form textarea {
+  width: 100%;
   padding: 14px 16px;
   border-radius: 10px;
   border: 1px solid #d0d0d0;
@@ -136,29 +144,18 @@
   font-size: 15px;
   outline: none;
   transition: 0.2s;
-  font-family: "poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-.contacts-form textarea{
-  width: 83%;
-  padding: 14px 16px;
-  border-radius: 10px;
-  border: 1px solid #d0d0d0;
-  background: #fafafa;
-  font-size: 15px;
-  outline: none;
-  transition: 0.2s;
-  font-family: "poppins", sans-serif;
+
+.contacts-form textarea {
+  min-height: 130px;
+  resize: none;
 }
 
 .contacts-form input:focus,
 .contacts-form textarea:focus {
   border-color: #70A9A1;
   background: #fff;
-}
-
-.contacts-form textarea {
-  min-height: 130px;
-  resize: none;
 }
 
 /* SUBMIT BUTTON */
@@ -171,9 +168,9 @@
   cursor: pointer;
   font-weight: 600;
   font-size: 16px;
+  width: 100%;
   transition: 0.3s;
-  width: 92%;
-  font-family: "poppins", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .send-btn:hover {
@@ -204,6 +201,7 @@
   }
 
   .contacts-form {
+    max-width: 100%;
     padding: 20px;
   }
 

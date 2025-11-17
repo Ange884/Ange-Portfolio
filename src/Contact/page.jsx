@@ -26,7 +26,7 @@ export default function ContactSection() {
       <div className="background-content">
 
         <h1 className="touch">Get in Touch</h1>
-        <h1 className="big-head">Let's Create Something Amazing Together</h1>
+        <h1 className="big-head">Let's Create Something <br/> Amazing Together</h1>
 
         <p>
           Get in touch with me for collaborations, projects, or opportunities. <br />
