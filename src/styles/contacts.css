@@ -53,7 +53,6 @@
 .big-head {
   font-size: 38px;
   font-weight: 700;
-  margin-bottom: 15px;
   color: #fefefe;
   opacity: 0;
   transform: translateX(-30px);
@@ -104,12 +103,8 @@
   padding: 15px;
 }
 
-.left-part .intro {
-  margin-bottom: 10px;
-}
-
 .contact-details {
-  margin: 30px 0 20px 0;
+  margin: 0px 0 20px 0;
   padding: 20px;
   background: rgba(112, 169, 161, 0.08);
   border-radius: 12px;
@@ -119,13 +114,15 @@
 .contact-item {
   display: flex;
   align-items: flex-start;
-  gap: 15px;
+  gap: 40px;
   padding: 15px 0;
   color: #f5f7f8;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0;
   transform: translateX(-30px);
+  transform: translateY(-30px);
   transition: all 0.5s ease-out;
+  margin-top: 0;
 }
 
 .contact-item:last-child {
@@ -170,7 +167,7 @@
 }
 
 .info h4 {
-  margin: 0 0 4px 0;
+  margin: 0 0 4px 4px;
   font-size: 14px;
   font-weight: 600;
   color: #fefefe;
@@ -256,7 +253,7 @@
   border-radius: 10px;
   border: 1px solid rgba(112, 169, 161, 0.3);
   background: rgba(255, 255, 255, 0.1);
-  color: #22495a;
+  color: #acafb1;
   font-size: 15px;
   outline: none;
   transition: all 0.3s ease;
@@ -267,7 +264,7 @@
 
 .contacts-form input::placeholder,
 .contacts-form textarea::placeholder {
-  color: rgba(34, 73, 90, 0.6);
+  color: rgba(202, 203, 204, 0.6);
 }
 
 .contacts-form input:focus,
