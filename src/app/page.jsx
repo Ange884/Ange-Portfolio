@@ -6,6 +6,7 @@ import AboutSection from "@/About/page";
 import SkillsSection from "@/Skills/page";
 import ProjectsSection from "@/Projects/page";
 import ContactSection from "@/Contact/page";
+import ProjectCollab from "@/Action/page";
 import "./globals.css";
 
 export default function Page() {
@@ -28,7 +29,10 @@ export default function Page() {
       <section id="projects">
         <ProjectsSection />
       </section>
-
+       
+       <section >
+        <ProjectCollab/>
+       </section>
       <section id="contact">
         <ContactSection />
       </section>

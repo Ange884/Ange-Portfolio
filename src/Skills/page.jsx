@@ -13,31 +13,36 @@ import { FaHtml5, FaCss3Alt, FaNodeJs, FaReact, FaFigma, FaDatabase, FaMobileAlt
   SiAdobephotoshop,
   SiFlutter,
   SiNextdotjs,
-  SiTailwindcss
+  SiTailwindcss,
+  SiNuxtdotjs, 
+  SiVuedotjs,
+  SiAngular
 } from "react-icons/si";
 
 export default function Skills() {
   const categories = ["All", "Frontend", "Backend", "Mobile", "Design", "Others"];
 
   const skillsData = [
-    { name: "HTML", icon: <FaHtml5 />, category: "Frontend" },
-    { name: "CSS", icon: <FaCss3Alt />, category: "Frontend" },
-    { name: "JavaScript", icon: <FaReact />, category: "Frontend" },
-    { name: "React", icon: <FaReact />, category: "Frontend" },
-
-    { name: "Node.js", icon: <FaNodeJs />, category: "Backend" },
-    { name: "MongoDB", icon: <FaDatabase />, category: "Backend" },
-    { name: "Express", icon: <FaNodeJs />, category: "Backend" },
-
-    { name: "React Native", icon: <FaMobileAlt />, category: "Mobile" },
-
-    { name: "Figma", icon: <FaFigma />, category: "Design" },
-    { name: "Photoshop", icon: <SiAdobephotoshop />, category: "Design" },
-    { name: "Adobe XD", icon: <SiAdobexd />, category: "Design" },
-
-    { name: "Flutter", icon: <SiFlutter />, category: "Mobile" },
-    { name: "Next Js", icon: <SiNextdotjs />, category: "Frontend" },
-    { name: "Tailwind Css", icon: <SiTailwindcss/>, category: "Frontend" },
+      { name: "Angular", icon: <SiAngular />, category: "Frontend" },
+      { name: "React Js", icon: <FaReact />, category: "Frontend" },
+      { name: "Nuxt Js", icon: <SiNuxtdotjs />, category: "Frontend" },
+      { name: "Vue Js", icon: <SiVuedotjs />, category: "Frontend" },
+      
+      { name: "Node.js", icon: <FaNodeJs />, category: "Backend" },
+      { name: "MongoDB", icon: <FaDatabase />, category: "Backend" },
+      { name: "Express", icon: <FaNodeJs />, category: "Backend" },
+      
+      { name: "React Native", icon: <FaMobileAlt />, category: "Mobile" },
+      
+      { name: "Figma", icon: <FaFigma />, category: "Design" },
+      { name: "Photoshop", icon: <SiAdobephotoshop />, category: "Design" },
+      { name: "Adobe XD", icon: <SiAdobexd />, category: "Design" },
+      
+      { name: "Flutter", icon: <SiFlutter />, category: "Mobile" },
+      { name: "Next Js", icon: <SiNextdotjs />, category: "Frontend" },
+      { name: "Tailwind Css", icon: <SiTailwindcss/>, category: "Frontend" },
+      { name: "HTML", icon: <FaHtml5 />, category: "Frontend" },
+      { name: "CSS", icon: <FaCss3Alt />, category: "Frontend" },
     { name: "MySql", icon: <SiMysql />, category: "Others" },
     { name: "Postgresql", icon: <SiPostgresql />, category: "Others" },
 
