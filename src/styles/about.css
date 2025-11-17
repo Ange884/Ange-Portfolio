@@ -12,16 +12,28 @@
 .left-image {
   flex: 1 1 600px;
   display: flex;
-  /* justify-content: center;
-   */
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
 
+.decorative-bg {
+  position: absolute;
+  width: 79%;
+  height: 100%;
+  background: #e1edeb;
+  border-radius: 20px;
+  transform: rotate(2.5deg);
+  z-index: 0;
 }
 
 .profile-image {
   border-radius: 20px;
   object-fit: cover;
   max-width: 100%;
-  margin-left: 4rem;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 /* RIGHT CONTENT */

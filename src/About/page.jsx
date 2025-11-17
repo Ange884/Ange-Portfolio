@@ -33,6 +33,7 @@ export default function AboutSection() {
     <section className="about-section" id="about">
       {/* LEFT IMAGE */}
       <div className="left-image">
+        <div className="decorative-bg"></div>
         <Image src={AngeImage} alt="Nziza Ange"  className="profile-image" />
       </div>
 
