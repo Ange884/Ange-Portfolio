@@ -1,20 +1,51 @@
 import { useState } from "react";
 import "../styles/skills.css";
+import { FaHtml5, FaCss3Alt, FaNodeJs, FaReact, FaFigma, FaDatabase, FaMobileAlt, FaGithub,FaJava,
+ } from "react-icons/fa";
 
-export default function SkillsSection() {
+ import {
+  SiC,
+  SiCplusplus,
+  SiPostgresql,
+  SiMysql,
+  SiPhp,
+  SiAdobexd,
+  SiAdobephotoshop,
+  SiFlutter,
+  SiNextdotjs,
+  SiTailwindcss
+} from "react-icons/si";
+
+export default function Skills() {
   const categories = ["All", "Frontend", "Backend", "Mobile", "Design", "Others"];
 
   const skillsData = [
-    { name: "HTML", level: 95, category: "Frontend" },
-    { name: "CSS", level: 90, category: "Frontend" },
-    { name: "JavaScript", level: 85, category: "Frontend" },
-    { name: "React", level: 80, category: "Frontend" },
-    { name: "Node.js", level: 70, category: "Backend" },
-    { name: "Express", level: 65, category: "Backend" },
-    { name: "MongoDB", level: 60, category: "Backend" },
-    { name: "React Native", level: 75, category: "Mobile" },
-    { name: "Figma", level: 88, category: "Design" },
-    { name: "Git/GitHub", level: 82, category: "Others" },
+    { name: "HTML", icon: <FaHtml5 />, category: "Frontend" },
+    { name: "CSS", icon: <FaCss3Alt />, category: "Frontend" },
+    { name: "JavaScript", icon: <FaReact />, category: "Frontend" },
+    { name: "React", icon: <FaReact />, category: "Frontend" },
+
+    { name: "Node.js", icon: <FaNodeJs />, category: "Backend" },
+    { name: "MongoDB", icon: <FaDatabase />, category: "Backend" },
+    { name: "Express", icon: <FaNodeJs />, category: "Backend" },
+
+    { name: "React Native", icon: <FaMobileAlt />, category: "Mobile" },
+
+    { name: "Figma", icon: <FaFigma />, category: "Design" },
+    { name: "Git/GitHub", icon: <SiAdobephotoshop />, category: "Others" },
+    { name: "Git/GitHub", icon: <SiAdobexd />, category: "Others" },
+
+    { name: "Git/GitHub", icon: <SiFlutter />, category: "Others" },
+    { name: "Git/GitHub", icon: <SiNextdotjs />, category: "Others" },
+    { name: "Git/GitHub", icon: <SiTailwindcss/>, category: "Others" },
+    { name: "Git/GitHub", icon: <SiMysql />, category: "Others" },
+    { name: "Git/GitHub", icon: <SiPostgresql />, category: "Others" },
+
+    { name: "Git/GitHub", icon: <FaGithub />, category: "Others" },
+    { name: "Git/GitHub", icon: <FaJava />, category: "backend" },
+    { name: "Git/GitHub", icon: <SiC />, category: "Others" },
+    { name: "Git/GitHub", icon: <SiPhp />, category: "Others" },
+    { name: "Git/GitHub", icon: <SiCplusplus />, category: "Others" },
   ];
 
   const [activeCategory, setActiveCategory] = useState("All");
@@ -40,20 +71,11 @@ export default function SkillsSection() {
         ))}
       </div>
 
-      <div className="skills-list">
+      <div className="skills-grid">
         {filteredSkills.map((skill, index) => (
-          <div className="skill-box" key={index}>
-            <div className="skill-header">
-              <span>{skill.name}</span>
-              <span>{skill.level}%</span>
-            </div>
-
-            <div className="progress-bar">
-              <div
-                className="progress"
-                style={{ width: `${skill.level}%` }}
-              ></div>
-            </div>
+          <div className="skill-card" key={index}>
+            <div className="skill-icon">{skill.icon}</div>
+            <h3>{skill.name}</h3>
           </div>
         ))}
       </div>
