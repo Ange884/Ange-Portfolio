@@ -26,13 +26,15 @@ export default function Page() {
         <SkillsSection />
       </section>
 
-      <section id="projects">
-        <ProjectsSection />
-      </section>
-       
        <section >
         <ProjectCollab/>
        </section>
+       
+      <section id="projects">
+        <ProjectsSection />
+      </section>
+
+       
       <section id="contact">
         <ContactSection />
       </section>
