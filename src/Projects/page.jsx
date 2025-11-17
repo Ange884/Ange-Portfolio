@@ -11,7 +11,7 @@ export default function ProjectsSection() {
       title: "ShopFlow Platform",
       description:
         "A full-featured e-commerce platform with real-time inventory management and a seamless checkout experience.",
-      image: "/images/cash.jpg",
+      image: "/images/luv.jpg",
       link: "/projects/shopflow",
       tech: "React Js",
       Category: "E-Commerce"
@@ -21,7 +21,7 @@ export default function ProjectsSection() {
       title: "House-Fund Automata",
       description:
         "A student and teacher portal with dashboards, role-based access, course management, and analytics.",
-      image: "/images/loans.jpg",
+      image: "/images/house.jpg",
       link: "/projects/educonnect",
       tech: "React Native",
       Category: "E-Commerce"
@@ -31,7 +31,7 @@ export default function ProjectsSection() {
       title: "MotherLink System",
       description:
         "A health and emergency management system for supporting mothers with real-time assistance and verified records.",
-      image: "/images/Mom.jpg",
+      image: "/images/mother.jpg",
       link: "/projects/motherlink",
       tech: "React Native",
       Category: "Health"
@@ -41,7 +41,7 @@ export default function ProjectsSection() {
       title: "TravelEase Booking",
       description:
         "A beautiful travel booking platform for flights, hotels, and trip planning with a smooth UI/UX.",
-      image: "/images/travel.png",
+      image: "/images/travel.jpg",
       link: "/projects/travelease",
       tech: "Next Js",
       Category: "Finance"
