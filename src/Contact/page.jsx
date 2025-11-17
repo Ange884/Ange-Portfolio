@@ -5,17 +5,17 @@ import "../styles/contacts.css";
 export default function ContactSection() {
   const Address = [
     {
-      icon: <FiMail color="#70A9A1" size={24} />,
+      icon: <FiMail color="#70A9A1" size={21} />,
       name: "Email",
       details: "ishimwenzizaangell@gmail.com",
     },
     {
-      icon: <FiPhone color="#70A9A1" size={24} />,
+      icon: <FiPhone color="#70A9A1" size={21} />,
       name: "Phone",
       details: "+250792644",
     },
     {
-      icon: <FiMapPin color="#70A9A1" size={24} />,
+      icon: <FiMapPin color="#70A9A1" size={21} />,
       name: "Location",
       details: "Kigali, Rwanda",
     },

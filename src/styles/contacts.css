@@ -71,8 +71,7 @@
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 18px;
-  margin-bottom: 28px;
+  gap: 10px;
   padding: 10px 0;
 }
 
@@ -81,20 +80,25 @@
   align-items: center;
   justify-content: center;
   background: #e7f3f2;
-  padding: 14px;
+  padding: 10px;
   border-radius: 12px;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 
 .info h4 {
   margin: 0;
-  font-size: 18px;
+  font-size: 13px;
   font-weight: 600;
 }
 
 .info p {
   margin: 0;
   opacity: 0.75;
-  font-size: 15px;
+  font-size: 11px;
 }
 
 /* COPYRIGHT TEXT */
@@ -121,28 +125,28 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding: 25px;
+  padding: 30px;
   border: 1px solid #dcdcdc;
   border-radius: 14px;
   background: #ffffff;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-  width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   font-family: "Poppins", sans-serif;
+  width: 100%;
+  align-items: center;
 }
 
 /* ROW FOR FIRST/LAST NAME */
 .contacts-form .row {
   display: flex;
   gap: 18px;
-  width: 100%;
+  width: 99%;
 }
 
 /* INPUTS & TEXTAREA */
 .contacts-form input,
 .contacts-form textarea {
-  width: 100%;
-  padding: 14px 16px;
+  padding: 16px 16px;
   border-radius: 10px;
   border: 1px solid #d0d0d0;
   background: #fafafa;
@@ -150,6 +154,7 @@
   outline: none;
   transition: 0.2s;
   font-family: "Poppins", sans-serif;
+  width: 91.5%;
 }
 
 .contacts-form textarea {
@@ -173,7 +178,7 @@
   cursor: pointer;
   font-weight: 600;
   font-size: 16px;
-  width: 100%;
+  width: 99%;
   transition: 0.3s;
   font-family: "Poppins", sans-serif;
 }
