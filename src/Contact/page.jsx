@@ -1,6 +1,7 @@
 'use client'
 import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
 import "../styles/contacts.css";
+import { FaInstagram, FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 export default function ContactSection() {
   const Address = [
@@ -20,7 +21,6 @@ export default function ContactSection() {
       details: "Kigali, Rwanda",
     },
   ];
-
   return (
     <div className="contacts">
       <div className="background-content">
@@ -49,7 +49,40 @@ export default function ContactSection() {
                 </div>
               </div>
             ))}
-
+            <div className="follow">
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon instagram"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon linkedin"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon github"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon twitter"
+              >
+                <FaTwitter />
+              </a>
+            </div>
             <p className="copyright">
               © {new Date().getFullYear()} Ishimwe Nziza — All Rights Reserved
             </p>

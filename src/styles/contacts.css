@@ -6,7 +6,8 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  background: #f5f7f8; /* optional subtle background */
+  background: #22495a; /* optional subtle background */
+  color: #f5f7f8;
 }
 
 .background-content {
@@ -23,7 +24,7 @@
 ================================ */
 .contacts-touch {
   font-size: 18px;
-  color: #70A9A1;
+  color: #8fd3c1;
   margin-bottom: 8px;
   letter-spacing: 1px;
 }
@@ -32,6 +33,7 @@
   font-size: 38px;
   font-weight: 700;
   margin-bottom: 15px;
+  color: #fefefe;
 }
 
 .background-content p {
@@ -39,6 +41,7 @@
   opacity: 0.8;
   line-height: 1.6;
   margin-bottom: 0px;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* ================================
@@ -73,6 +76,7 @@
   align-items: center;
   gap: 10px;
   padding: 5px 0;
+  color: #f5f7f8;
 }
 
 .icon {
@@ -88,19 +92,22 @@
   margin: 0;
   font-size: 13px;
   font-weight: 600;
+  color: #fefefe;
 }
 
 .info p {
   margin: 0;
   opacity: 0.75;
   font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* COPYRIGHT TEXT */
 .copyright {
   margin-top: 40px;
   font-size: 14px;
-  opacity: 0.7;
+  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* ================================
@@ -167,7 +174,7 @@
 .send-btn {
   padding: 15px;
   border-radius: 12px;
-  background: #70A9A1;
+  background: #70a9a1;
   color: white;
   border: none;
   cursor: pointer;
@@ -181,6 +188,57 @@
 .send-btn:hover {
   background: #5b928c;
 }
+
+.follow {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.follow .icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #315c68;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #e6f4f0;
+  font-size: 14px;
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease,
+    border 0.25s ease;
+  text-decoration: none;
+}
+
+.follow .icon:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #8fd3c1;
+  color: #0b242f;
+  border-color: transparent;
+}
+
+.follow .instagram:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+}
+
+.follow .linkedin:hover {
+  background: #0077b5;
+  color: #fff;
+}
+
+.follow .github:hover {
+  background: #f5f7f8;
+  color: #1f2933;
+}
+
+.follow .twitter:hover {
+  background: #1da1f2;
+  color: #fff;
+}
+
 
 /* ================================
    RESPONSIVENESS
