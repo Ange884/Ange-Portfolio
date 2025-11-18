@@ -1,35 +1,80 @@
 'use client';
 
 import Image from "next/image";
-import AngeImage from "../../public/images/Ange.jpeg"; // make sure this is a proper image file like .png/.jpg
+import AngeImage from "../../public/images/Ange.jpeg";
 import { FaLaptopCode, FaMobileAlt, FaPaintBrush, FaRocket } from "react-icons/fa";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import "../styles/about.css";
 
 export default function AboutSection() {
   const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false); // Track to allow resets
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
+    let observer;
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const initObserver = () => {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            console.log('Observer triggered: About in view!');
+            setIsVisible(true);
+            setHasAnimated(true);
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+
+      return () => {
+        if (sectionRef.current && observer) {
+          observer.unobserve(sectionRef.current);
+        }
+      };
+    };
+
+    const cleanup = initObserver();
+
+    // Initial hash check
+    if (window.location.hash === '#about' && !hasAnimated) {
+      console.log('Initial hash match: Triggering animation!');
+      setTimeout(() => {
+        setIsVisible(true);
+        setHasAnimated(true);
+        if (sectionRef.current) {
+          sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 50);
     }
 
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+    // Hashchange listener
+    const handleHashChange = () => {
+      if (window.location.hash === '#about') {
+        console.log('Hashchange: About link clicked!');
+        setIsVisible(false);
+        setHasAnimated(false);
+        setTimeout(() => {
+          setIsVisible(true);
+          setHasAnimated(true);
+          if (sectionRef.current) {
+            sectionRef.current.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100); 
       }
     };
-  }, []);
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+      cleanup();
+    };
+  }, [hasAnimated]); 
 
   const featureList = [
     {
@@ -54,12 +99,14 @@ export default function AboutSection() {
     },
   ];
 
+  console.log('Render: isVisible=', isVisible, 'hasAnimated=', hasAnimated); // Debug: Check state
+
   return (
-    <section ref={sectionRef} className="about-section" id="about">
+    <section ref={sectionRef} className={`about-section ${isVisible ? 'animate' : ''}`} id="about">
       {/* LEFT IMAGE */}
       <div className="left-image">
         <div className="decorative-bg"></div>
-        <Image src={AngeImage} alt="Nziza Ange"  className="profile-image" />
+        <Image src={AngeImage} alt="Nziza Ange" className="profile-image" />
       </div>
 
       {/* RIGHT CONTENT */}
@@ -67,13 +114,13 @@ export default function AboutSection() {
         <h1 className="about-heading">ABOUT ME</h1>
         <h2 className="about-subheading">Building Digital Products That Matter</h2>
 
-        <p>
+        <p className="about-paragraph">
           I am a passionate frontend and mobile developer who enjoys turning ideas<br />
           into clean, interactive, and visually appealing digital experiences.<br />
           My focus is on creating designs that feel smooth, modern, and intuitive.
         </p>
 
-        <p>
+        <p className="about-paragraph">
           With every project, I aim to blend creativity with technical precision to<br />
           deliver products that are fast, responsive, and meaningful to users.<br />
           I continue learning modern tools to build better interfaces every day.
