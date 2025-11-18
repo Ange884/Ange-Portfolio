@@ -246,6 +246,14 @@
   transform: translateY(-4px) scale(1.05);
 }
 
+.typewriter-text {
+  margin-top: 1.2rem;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #70a9a1;  /* Matches your theme */
+}
+
+
 @keyframes borderPulse {
   0% { border-color: #4e8880; }
   50% { border-color: #70a9a1; border-width: 3px; }
