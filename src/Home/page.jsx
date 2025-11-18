@@ -19,7 +19,7 @@ export default function Home() {
         <Typewriter
           words={[
             "Mobile Developer",
-            "React & React Native Developer",
+            "Frontend Developer",
             "UI/UX Enthusiast",
             "Machine Learning"
           ]}
