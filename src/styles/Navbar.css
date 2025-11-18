@@ -96,7 +96,7 @@
   bottom: -4px;
   left: 50%;
   transform: translateX(-50%);
-  height: 3px;
+  height: 1.5px;
   background: linear-gradient(90deg, transparent, #70a9a1, #22495a, #70a9a1, transparent);
   border-radius: 2px;
   width: 0;

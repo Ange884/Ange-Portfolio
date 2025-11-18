@@ -26,7 +26,7 @@
 .background-content {
   width: 90%;
   max-width: 1200px;
-  margin: auto;
+  margin: 0;
   text-align: left;
   display: flex;
   flex-direction: column;
@@ -38,7 +38,7 @@
 .contacts-touch {
   font-size: 18px;
   color: #8fd3c1;
-  margin-bottom: 8px;
+  margin-bottom: 0px;
   letter-spacing: 1px;
   opacity: 0;
   transform: translateX(-30px);
@@ -51,7 +51,7 @@
 }
 
 .big-head {
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 700;
   color: #fefefe;
   opacity: 0;
@@ -64,7 +64,8 @@
   transform: translateX(0);
 }
 
-.background-content p {
+
+.intro p {
   font-size: 16px;
   opacity: 0.8;
   line-height: 1.6;
@@ -75,7 +76,7 @@
   transition: all 0.8s ease-out 0.2s;
 }
 
-.left-part.animate-left .background-content p {
+.left-part.animate-left .intro p {
   opacity: 1;
   transform: translateX(0);
 }
@@ -115,7 +116,7 @@
   display: flex;
   align-items: flex-start;
   gap: 40px;
-  padding: 15px 0;
+  padding: 10px 0;
   color: #f5f7f8;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0;
@@ -154,8 +155,9 @@
   border-radius: 12px;
   transition: all 0.3s ease;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 0px;
 }
+
 
 .contact-item:hover .icon {
   transform: scale(1.1) rotate(5deg);
@@ -167,7 +169,7 @@
 }
 
 .info h4 {
-  margin: 0 0 4px 4px;
+  margin: 0px;
   font-size: 14px;
   font-weight: 600;
   color: #fefefe;
@@ -177,7 +179,6 @@
   margin: 0;
   opacity: 0.85;
   font-size: 13px;
-  color: #e6f4f0;
   word-break: break-word;
 }
 
