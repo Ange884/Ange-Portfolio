@@ -3,9 +3,34 @@
 import Image from "next/image";
 import AngeImage from "../../public/images/Ange.jpeg"; // make sure this is a proper image file like .png/.jpg
 import { FaLaptopCode, FaMobileAlt, FaPaintBrush, FaRocket } from "react-icons/fa";
+import { useRef, useEffect } from "react";
 import "../styles/about.css";
 
 export default function AboutSection() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   const featureList = [
     {
       icon: <FaLaptopCode size={50} color="#70A9A1" />,
@@ -30,7 +55,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section className="about-section" id="about">
+    <section ref={sectionRef} className="about-section" id="about">
       {/* LEFT IMAGE */}
       <div className="left-image">
         <div className="decorative-bg"></div>

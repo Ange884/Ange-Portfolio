@@ -10,23 +10,208 @@
   overflow: hidden;
 }
 
-/* Entrance animation for the entire section */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
+/* Initial hidden state for animated elements - opacity 0 only if not .animate */
+.profile-image,
+.about-right,
+.about-heading,
+.about-subheading,
+.about-paragraph,
+.features,
+.feature,
+.about-button {
+  opacity: 0;
+  animation-fill-mode: both; /* Ensures animation state persists */
+}
+
+/* Ensure feature-desc is always visible once parent animates */
+.feature-desc {
+  opacity: 0.85 !important; /* Override any inheritance */
+}
+
+/* Trigger animations when .animate class is added */
+.about-section.animate .profile-image {
+  animation: zoomRotateIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.1s forwards;
+}
+
+.about-section.animate .about-right {
+  animation: slideUp 0.8s ease-out 0.2s forwards;
+  transform: translateY(40px);
+}
+
+@keyframes slideUp {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.about-section {
-  animation: fadeInUp 0.8s ease-out forwards;
+.about-section.animate .about-heading {
+  animation: slideInFromLeft 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+  transform: translateX(-40px);
 }
 
-/* LEFT IMAGE */
+.about-section.animate .about-subheading {
+  animation: slideInFromRight 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s forwards;
+  transform: translateX(40px);
+}
+
+.about-section.animate .about-paragraph:nth-of-type(1) {
+  animation: slideInFromDown 0.6s ease-out 0.5s forwards;
+  transform: translateY(30px);
+}
+
+.about-section.animate .about-paragraph:nth-of-type(2) {
+  animation: slideInFromDown 0.6s ease-out 0.6s forwards;
+  transform: translateY(30px);
+}
+
+@keyframes slideInFromLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* FEATURES */
+.about-section.animate .features {
+  animation: slideUp 0.7s ease-out 0.7s forwards;
+  transform: translateY(20px);
+}
+
+.about-section.animate .feature {
+  opacity: 1; /* Base for staggered */
+  transform: translateY(10px);
+}
+
+.about-section.animate .features .feature:nth-child(1) { 
+  animation: slideInFromLeft 0.6s ease-out 0.8s forwards; 
+}
+.about-section.animate .features .feature:nth-child(2) { 
+  animation: slideInFromRight 0.6s ease-out 0.9s forwards; 
+}
+.about-section.animate .features .feature:nth-child(3) { 
+  animation: slideInFromLeft 0.6s ease-out 1s forwards; 
+}
+.about-section.animate .features .feature:nth-child(4) { 
+  animation: slideInFromRight 0.6s ease-out 1.1s forwards; 
+}
+
+/* Icon spin - starts from opacity 0, rotates */
+.feature-icon {
+  opacity: 0;
+  transform: rotate(-180deg);
+  flex-shrink: 0;
+}
+
+.about-section.animate .feature:nth-child(1) .feature-icon { 
+  animation: spinIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards; 
+}
+.about-section.animate .feature:nth-child(2) .feature-icon { 
+  animation: spinIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.9s forwards; 
+}
+.about-section.animate .feature:nth-child(3) .feature-icon { 
+  animation: spinIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1s forwards; 
+}
+.about-section.animate .feature:nth-child(4) .feature-icon { 
+  animation: spinIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.1s forwards; 
+}
+
+@keyframes spinIn {
+  to {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+
+.feature-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #22495a;
+  margin: 0;
+}
+
+.feature:hover .feature-title {
+  animation: colorPulse 0.5s ease-in-out;
+}
+
+@keyframes colorPulse {
+  0%, 100% { color: #22495a; }
+  50% { color: #70a9a1; }
+}
+
+.feature-desc {
+  font-size: 0.7rem;
+  color: #22495a;
+  margin-top: 4px;
+}
+
+/* BUTTON */
+.about-section.animate .about-button {
+  animation: slideInFromDown 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.2s forwards;
+  transform: translateY(30px);
+  margin-top: 30px;
+}
+
+.about-button .button {
+  padding: 15px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  background: #70a9a1;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: "poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-button .button::before {
+  content: "";
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 0; height: 0;
+  background: rgba(255,255,255,0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+  pointer-events: none;
+}
+
+.about-button .button:active::before {
+  width: 200px;
+  height: 200px;
+}
+
+.about-button .button:hover {
+  background: linear-gradient(45deg, #5b8f88, #70a9a1);
+  background-size: 200% 200%;
+  animation: gradientShift 0.6s ease-in-out;
+  transform: translateY(-3px) scale(1.05);
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* LEFT IMAGE - unchanged layout */
 .left-image {
   flex: 1 1 600px;
   display: flex;
@@ -43,6 +228,12 @@
   border-radius: 20px;
   transform: rotate(2.5deg);
   z-index: 0;
+  animation: breathe 4s ease-in-out infinite alternate;
+}
+
+@keyframes breathe {
+  0% { transform: rotate(2.5deg) scale(1); }
+  100% { transform: rotate(2.5deg) scale(1.02); }
 }
 
 .profile-image {
@@ -51,119 +242,50 @@
   max-width: 100%;
   position: relative;
   z-index: 1;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  animation: fadeInUp 0.7s ease-out 0.2s forwards;
+  transform: scale(0.9) rotate(-1deg);
 }
 
-/* RIGHT CONTENT */
+@keyframes zoomRotateIn {
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* RIGHT CONTENT - base styles */
 .about-right {
   flex: 1 1 600px;
   max-height: 500px;
   margin-right: 2.2rem;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: slideUp 0.8s ease-out 0.3s forwards;
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 .about-heading {
   font-size: 1.1rem;
   font-weight: 700;
   color: #22495a;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.6s ease-out 0.4s forwards;
 }
 
 .about-subheading {
   font-size: 1rem;
   font-weight: 500;
   color: #70a9a1;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.6s ease-out 0.5s forwards;
 }
 
-.about-right p {
+.about-paragraph {
   font-size: 0.8rem;
   line-height: 1.7;
   color: #22495a;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.6s ease-out 0.6s forwards;
 }
 
-/* FEATURES GRID */
 .features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
   margin: 30px 0;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.7s ease-out 0.7s forwards;
 }
 
 .feature {
   display: flex;
   align-items: flex-start;
   gap: 15px;
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.features .feature:nth-child(1) { animation: slideUp 0.5s ease-out 0.8s forwards; }
-.features .feature:nth-child(2) { animation: slideUp 0.5s ease-out 0.9s forwards; }
-.features .feature:nth-child(3) { animation: slideUp 0.5s ease-out 1s forwards; }
-.features .feature:nth-child(4) { animation: slideUp 0.5s ease-out 1.1s forwards; }
-
-.feature-icon {
-  flex-shrink: 0;
-}
-
-.feature-title {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #22495a;
-  margin: 0;
-}
-
-.feature-desc {
-  font-size: 0.7rem;
-  color: #22495a;
-  opacity: 0.85;
-  margin-top: 4px;
-}
-
-/* DOWNLOAD BUTTON */
-.about-button {
-  margin-top: 30px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: slideUp 0.6s ease-out 1.2s forwards;
-}
-
-.about-button .button {
-  padding: 15px 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 10px;
-  border: none;
-  background: #70a9a1;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: "poppins" , sans-serif;
-}
-
-.about-button .button:hover {
-  background: #5b8f88;
-  transform: translateY(-3px) scale(1.05);
 }
