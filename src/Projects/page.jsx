@@ -65,7 +65,6 @@ export default function ProjectsSection() {
   {featuredProjects.map((project) => (
     <div className="project-card" key={project.id}>
 
-      {/* IMAGE + OVERLAY WRAPPER */}
       <div className="image-wrapper">
         <img src={project.image} alt={project.title} />
 
