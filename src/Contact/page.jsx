@@ -65,6 +65,48 @@ export default function ContactSection() {
       details: "Kigali, Rwanda",
     },
   ];
+
+  const [loading, setLoading] = useState(false);
+  const [successMsg, setSuccessMsg] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccessMsg("");
+    setErrorMsg("");
+
+    // Collect form data
+    const formData = {
+      firstName: e.target[0].value,
+      lastName: e.target[1].value,
+      email: e.target[2].value,
+      subject: e.target[3].value,
+      message: e.target[4].value,
+    };
+
+    try {
+      const res = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setSuccessMsg(data.message);
+        e.target.reset(); // Clear the form
+      } else {
+        setErrorMsg(data.error || "Something went wrong!");
+      }
+    } catch (err) {
+      console.error(err);
+      setErrorMsg("Server error. Try again later.");
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <div className="contacts">
       <div className="background-content">
