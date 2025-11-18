@@ -59,7 +59,6 @@
 
 /* Smooth hover with gentle sway */
 .main-heading:hover {
-  animation: sway 0.6s ease-in-out;
   transform-origin: center;
 }
 

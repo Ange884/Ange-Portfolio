@@ -1,5 +1,5 @@
 import "../styles/home.css";
-import Typewriter  from "react-simple-typewriter";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Home() {
   return (
@@ -14,20 +14,22 @@ export default function Home() {
         <br /> <span>using</span> <span>modern</span> <span>technologies.</span>
       </p>
 
-       {/* ⭐ Typewriter text */}
+      {/* ⭐ Typewriter text */}
       <div className="typewriter-text">
         <Typewriter
-  options={{
-    strings: [
-      "Mobile Developer",
-      "React & React Native Developer",
-      "UI/UX Enthusiast",
-    ],
-    autoStart: true,
-    loop: true,
-  }}
-/>
-
+          words={[
+            "Mobile Developer",
+            "React & React Native Developer",
+            "UI/UX Enthusiast",
+            "Machine Learning"
+          ]}
+          loop={true}
+          cursor
+          cursorStyle="|"
+          typeSpeed={60}
+          deleteSpeed={40}
+          delaySpeed={1000}
+        />
       </div>
 
       <div className="buttons">
