@@ -1,6 +1,7 @@
 'use client';
 import "../styles/action.css";
 import { FaArrowRight } from "react-icons/fa";
+import Link from "next/link";
 
 export default function ProjectCollab() {
   return (
@@ -12,7 +13,7 @@ export default function ProjectCollab() {
        Let's connect and make something amazing together!
       </p>
 
-      <button className="cta-button">Let's work Together <FaArrowRight className="arrow-icon" /></button>
+      <Link href="#"><button className="cta-button">Let's work Together <FaArrowRight className="arrow-icon" /></button></Link>
     </div>
   );
 }

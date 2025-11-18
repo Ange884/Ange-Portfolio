@@ -1,5 +1,6 @@
 import "../styles/home.css";
 import { Typewriter } from "react-simple-typewriter";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -14,7 +15,7 @@ export default function Home() {
         <br /> <span>using</span> <span>modern</span> <span>technologies.</span>
       </p>
 
-      {/* ⭐ Typewriter text */}
+      {/*  Typewriter text */}
       <div className="typewriter-text">
         <Typewriter
           words={[
@@ -33,8 +34,8 @@ export default function Home() {
       </div>
 
       <div className="buttons">
-        <button className="view">View my work</button>
-        <button className="touch">Get in touch</button>
+        <Link href="#projects"><button className="view">View my work</button></Link>
+        <Link href="#contact"><button className="touch">Get in touch</button></Link>
       </div>
     </section>
   );
