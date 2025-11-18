@@ -75,7 +75,7 @@ export default function ContactSection() {
             <div className="intro">
               <h1 className="contacts-touch">Get in Touch</h1>
               <h1 className="big-head">
-                Let's Create Something <br /> Amazing Together
+                Let's Create Something Amazing Together
               </h1>
 
               <p>

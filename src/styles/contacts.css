@@ -51,10 +51,9 @@
 }
 
 .big-head {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 700;
   color: #fefefe;
-  opacity: 0;
   transform: translateX(-30px);
   transition: all 0.7s ease-out 0.1s;
 }
@@ -68,8 +67,8 @@
 .intro p {
   font-size: 16px;
   opacity: 0.8;
-  line-height: 1.6;
-  margin-bottom: 0px;
+  line-height: 1.5;
+  margin-bottom: 30px;
   color: rgba(255, 255, 255, 0.85);
   opacity: 0;
   transform: translateX(-30px);
@@ -116,7 +115,7 @@
   display: flex;
   align-items: flex-start;
   gap: 40px;
-  padding: 10px 0;
+  padding: 15px 0;
   color: #f5f7f8;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   opacity: 0;
