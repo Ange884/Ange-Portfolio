@@ -8,9 +8,9 @@ export default function Home() {
       </h1>
 
       <p className="sub-heading">
-        Specialized in crafting beautiful, responsive
-        <br /> interfaces and delivering smooth mobile experiences
-        <br /> using modern technologies.
+        <span>Specialized</span> <span>in</span> <span>crafting</span> <span>beautiful,</span> <span>responsive</span>
+        <br /> <span>interfaces</span> <span>and</span> <span>delivering</span> <span>smooth</span> <span>mobile</span> <span>experiences</span>
+        <br /> <span>using</span> <span>modern</span> <span>technologies.</span>
       </p>
 
       <div className="buttons">
