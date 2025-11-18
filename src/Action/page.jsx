@@ -13,7 +13,7 @@ export default function ProjectCollab() {
        Let's connect and make something amazing together!
       </p>
 
-      <Link href="#"><button className="cta-button">Let's work Together <FaArrowRight className="arrow-icon" /></button></Link>
+      <Link href="#contact"><button className="cta-button">Let's work Together <FaArrowRight className="arrow-icon" /></button></Link>
     </div>
   );
 }
