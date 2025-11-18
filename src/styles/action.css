@@ -44,3 +44,31 @@
   align-items: center;
 }
 
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .project-collab {
+    padding: 40px 20px;
+  }
+
+  .cta-title {
+    font-size: 32px;
+  }
+
+  .project-collab p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-title {
+    font-size: 26px;
+  }
+
+  .project-collab p {
+    font-size: 0.95rem;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+}

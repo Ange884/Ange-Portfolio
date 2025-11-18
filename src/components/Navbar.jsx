@@ -1,8 +1,10 @@
 'use client';
-import Link from "next/link";
+import { useState } from "react";
 import "../styles/Navbar.css";
 
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   const links = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
@@ -13,15 +15,25 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <ul className="navbar-list">
+      
+      {/* Hamburger */}
+      <div className="hamburger" onClick={() => setOpen(!open)}>
+        <div className={`line ${open ? "open" : ""}`} />
+        <div className={`line ${open ? "open" : ""}`} />
+        <div className={`line ${open ? "open" : ""}`} />
+      </div>
+
+      {/* Menu */}
+      <ul className={`navbar-list ${open ? "show" : ""}`}>
         {links.map((link) => (
-          <li key={link.name}>
+          <li key={link.name} onClick={() => setOpen(false)}>
             <a href={link.href} className="navbar-link">
               <span className="navbar-link-text">{link.name}</span>
             </a>
           </li>
         ))}
       </ul>
+
     </nav>
   );
 }

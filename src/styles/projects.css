@@ -364,6 +364,52 @@
   background: #70a9a1;
 }
 
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 1100px) {
+  .projects-grid {
+    gap: 20px;
+  }
+
+  .project-card img {
+    height: 260px;
+  }
+}
+
+@media (max-width: 960px) {
+  .projects {
+    padding: 60px 24px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    max-width: 760px;
+  }
+
+  .field {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-heading {
+    font-size: 2.1rem;
+  }
+
+  .project-card {
+    padding: 18px;
+  }
+
+  .project-card img {
+    height: 220px;
+  }
+
+  .field {
+    gap: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
 /* RESPONSIVE — phones (1 column) */
 @media (max-width: 640px) {
   .projects-grid {
@@ -372,8 +418,8 @@
   }
 
   .field {
-    gap: 20px;
-    justify-content: space-around;
+    gap: 12px;
+    justify-content: flex-start;
   }
 
   .project-heading {
@@ -382,5 +428,21 @@
 
   .intro {
     font-size: 0.95rem;
+  }
+
+  .viewbtn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 420px) {
+  .project-card {
+    padding: 16px;
+  }
+
+  .tech,
+  .category {
+    width: auto;
+    padding: 6px 12px;
   }
 }

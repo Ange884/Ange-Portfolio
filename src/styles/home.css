@@ -252,7 +252,6 @@
   color: #70a9a1;  /* Matches your theme */
 }
 
-
 @keyframes borderPulse {
   0% { border-color: #4e8880; }
   50% { border-color: #70a9a1; border-width: 3px; }
@@ -271,5 +270,88 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Tweaks ===== */
+@media (max-width: 1200px) {
+  .main-heading {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+
+  .sub-heading {
+    font-size: 1.1rem;
+    max-width: 640px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .home {
+    height: auto;
+    padding: 120px 40px 80px;
+  }
+
+  .main-heading {
+    font-size: 3rem;
+    line-height: 1.2;
+  }
+
+  .sub-heading {
+    white-space: normal;
+    line-height: 1.6;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .home {
+    padding: 120px 20px 70px;
+    gap: 20px;
+  }
+
+  .main-heading {
+    font-size: 2.4rem;
+  }
+
+  .sub-heading {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .sub-heading br {
+    display: none;
+  }
+
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+
+  .typewriter-text {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .main-heading {
+    font-size: 2rem;
+  }
+
+  .view,
+  .touch {
+    padding: 12px 24px;
+    font-size: 1rem;
   }
 }
