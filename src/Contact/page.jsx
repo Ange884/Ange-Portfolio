@@ -46,6 +46,13 @@ export default function ContactSection() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const apiBase = process.env.NEXT_PUBLIC_API_URL;
+
+    if (!apiBase) {
+      setErrorMsg("Missing NEXT_PUBLIC_API_URL. Please configure your backend URL.");
+      return;
+    }
+
     setLoading(true);
     setSuccessMsg("");
     setErrorMsg("");
@@ -59,13 +66,20 @@ export default function ContactSection() {
     };
 
     try {
-      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`, {
+      const res = await fetch(`${apiBase.replace(/\/$/, "")}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
 
-      const data = await res.json();
+      const text = await res.text();
+      let data;
+
+      try {
+        data = text ? JSON.parse(text) : {};
+      } catch (parseErr) {
+        throw new Error("Received non-JSON response from server.");
+      }
 
       if (res.ok) {
         setSuccessMsg(data.message);
