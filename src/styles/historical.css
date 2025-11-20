@@ -2,10 +2,14 @@
   position: relative;
   width: 100%;
   padding: 30px 0;
-  background:#f9fafb;
+  background:#fff;
   display: flex;
   justify-content: center;
   overflow: hidden; /* Prevent any overflow from animations */
+}
+history-section-wrapper{
+    background-color: #fff;
+    margin-top: 0px;
 }
 
 .vertical-line {
@@ -28,7 +32,7 @@
 .history-box {
   width: 45%;
   background: white;
-  padding: 30px; /* More padding for breathing room */
+  padding: 5px 30px; /* More padding for breathing room */
   border-radius: 12px;
   margin: 10px 0; /* Increased vertical spacing */
   opacity: 0;
@@ -85,8 +89,21 @@
 
 .show-right {
   opacity: 1;
-  transform: translateX(40px) scale(1);
+  transform: translateX(41px) scale(1);
 }
+
+.history-heading {
+  text-align: center;
+  background-color: #fff;
+}
+
+.history-heading h1 {
+  font-size: 36px;
+  color: #22495a;
+  font-weight: 700;
+  margin-bottom: 0px;
+}
+
 
 /* Add a staggered delay for sequential reveal */
 .history-box:nth-child(1) { transition-delay: 0.1s; }
@@ -97,7 +114,7 @@
 /* Text styling */
 .history-box h3 {
   margin-bottom: 15px;
-  font-size: 24px; /* Slightly larger */
+  font-size: 18px; /* Slightly larger */
   font-weight: 600;
   color: #22495a;
   position: relative;
@@ -117,7 +134,7 @@
 .history-box p {
   line-height: 1.7;
   color: #555;
-  font-size: 16px; /* Better readability */
+  font-size: 13px; /* Better readability */
 }
 
 /* Hover effects for interactivity */

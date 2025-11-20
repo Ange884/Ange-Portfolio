@@ -4,10 +4,11 @@
   align-items: flex-start;
   gap: 20px;
   padding: 40px;
-  background: #ffffff;
+  background: #fff;
   flex-wrap: wrap;
   position: relative;
   overflow: hidden;
+  margin-bottom: 0px;
 }
 
 /* Initial hidden state for animated elements - opacity 0 only if not .animate */

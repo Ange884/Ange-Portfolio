@@ -62,7 +62,7 @@ export default function Skills() {
 
   return (
     <section className="skills-section">
-      <h1 className="skills-title">My Skills</h1>
+      <h1 className="skills-title">My skills</h1>
 
       <div className="category-buttons">
         {categories.map((cat) => (
