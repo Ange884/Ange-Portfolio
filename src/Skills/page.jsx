@@ -49,7 +49,7 @@ export default function Skills() {
     { name: "Git/GitHub", icon: <FaGithub />, category: "Others" },
     { name: "JAVA", icon: <FaJava />, category: "Backend" },
     { name: "C", icon: <SiC />, category: "Others" },
-    { name: "PHP", icon: <SiPhp />, category: "Others" },
+    { name: "PHP", icon: <SiPhp />, category: "Backend" },
     { name: "C++", icon: <SiCplusplus />, category: "Others" },
   ];
 

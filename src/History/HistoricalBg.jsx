@@ -51,8 +51,7 @@ export default function HistoricalBackground() {
           >
             <h3>My Early Beginnings</h3>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this
-              with your real story…
+              In my early primary school years, I participated in a spelling competition and won, which sparked my love for learning and challenges.
             </p>
           </div>
 
@@ -63,7 +62,10 @@ export default function HistoricalBackground() {
           >
             <h3>Growing Up</h3>
             <p>
-              Add your real historical background here… events, achievements, etc.
+            I discovered coding and started exploring it.  
+         Over time, I realized I loved programming and building projects,  
+         which opened up new opportunities and sparked my passion for technology.
+
             </p>
           </div>
 
@@ -74,7 +76,7 @@ export default function HistoricalBackground() {
           >
             <h3>Education Journey</h3>
             <p style={{ fontWeight: 800, color: "#555" }}>
-              2015-2020 : New Vision Primary School <br/>
+              2015-2020 : NEW VISION PRIMARY SCHOOL <br/>
               2021-2024 : FAWE GIRLS' SCHOOL  <br/>
               2024-2027 : RWANDA CODING ACADEMY  <br/>
             </p>
@@ -87,7 +89,9 @@ export default function HistoricalBackground() {
           >
             <h3>Becoming Who I Am</h3>
             <p>
-              Mention your dreams, inspirations, things you overcame…
+              Now, I am a first-year student at Rwanda Coding Academy, focusing on frontend and mobile web development.  
+              I am passionate about building projects that solve real problems.
+
             </p>
           </div>
 
