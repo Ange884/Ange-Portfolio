@@ -83,8 +83,10 @@ export default function HistoricalBackground() {
           ref={(el) => (leftItems.current[1] = el)}
         >
           <h3>Education Journey</h3>
-          <p>
-            Here you can talk about schools you attended, memorable moments…
+          <p style={{fontWeight:800 , color:"#555"}}>
+            2015-2020 : New Vision Primary School <br/>
+            2021-2024 : FAWE GIRLS' SCHOOL  <br/>
+            2024-2027 : RWANDA CODING ACADEMY  <br/>
           </p>
         </div>
 
