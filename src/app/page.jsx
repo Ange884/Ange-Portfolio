@@ -23,6 +23,11 @@ export default function Page() {
         <AboutSection />
       </section>
 
+      <section >
+        <HistoricalBackground/>
+       </section>
+       
+
       <section id="skills">
         <SkillsSection />
       </section>
