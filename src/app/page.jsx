@@ -8,11 +8,15 @@ import ProjectsSection from "@/Projects/page";
 import ContactSection from "@/Contact/page";
 import ProjectCollab from "@/Action/page";
 import HistoricalBackground from "@/History/HistoricalBg";
+import CustomCursor from "@/Custom/customCursor";
 import "./globals.css";
 
 export default function Page() {
   return (
     <div className="relative min-h-screen overflow-hidden">
+        {/*Custome cursor */}
+        <CustomCursor/>
+
       <Navbar />
 
       <section id="home">
