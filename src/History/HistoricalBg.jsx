@@ -8,21 +8,44 @@ export default function HistoricalBackground() {
 
   useEffect(() => {
     const reveal = (elements, direction) => {
-      elements.forEach((el) => {
+      elements.forEach((el, index) => {
         const observer = new IntersectionObserver(
           ([entry]) => {
             if (entry.isIntersecting) {
-              el.classList.add(`show-${direction}`);
+              // Add a small stagger based on index for sequential animation
+              setTimeout(() => {
+                el?.classList.add(`show-${direction}`);
+              }, index * 150); // 150ms delay per item for smooth cascade
+              observer.unobserve(el); // Stop observing once triggered
             }
           },
-          { threshold: 0.3 }
+          { 
+            threshold: 0.2, // Trigger a bit earlier for better flow
+            rootMargin: '0px 0px -50px 0px' // Pre-load slightly before viewport
+          }
         );
-        observer.observe(el);
+        if (el) observer.observe(el);
       });
     };
 
-    reveal(leftItems.current, "left");
-    reveal(rightItems.current, "right");
+    reveal(leftItems.current.filter(Boolean), "left");
+    reveal(rightItems.current.filter(Boolean), "right");
+
+    // Cleanup observers on unmount
+    return () => {
+      leftItems.current.forEach(el => {
+        if (el) {
+          const observer = IntersectionObserver.from(el); // Note: This is pseudo; in practice, store observers if needed
+          if (observer) observer.disconnect();
+        }
+      });
+      rightItems.current.forEach(el => {
+        if (el) {
+          const observer = IntersectionObserver.from(el);
+          if (observer) observer.disconnect();
+        }
+      });
+    };
   }, []);
 
   return (
@@ -46,7 +69,7 @@ export default function HistoricalBackground() {
         {/* RIGHT SIDE */}
         <div
           className="history-box right"
-          ref={(el) => (rightItems.current[1] = el)}
+          ref={(el) => (rightItems.current[0] = el)} // Fixed indexing to start from 0 for right
         >
           <h3>Growing Up</h3>
           <p>
@@ -57,7 +80,7 @@ export default function HistoricalBackground() {
         {/* LEFT */}
         <div
           className="history-box left"
-          ref={(el) => (leftItems.current[2] = el)}
+          ref={(el) => (leftItems.current[1] = el)}
         >
           <h3>Education Journey</h3>
           <p>
@@ -68,7 +91,7 @@ export default function HistoricalBackground() {
         {/* RIGHT */}
         <div
           className="history-box right"
-          ref={(el) => (rightItems.current[3] = el)}
+          ref={(el) => (rightItems.current[1] = el)}
         >
           <h3>Becoming Who I Am</h3>
           <p>

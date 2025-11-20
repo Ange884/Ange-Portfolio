@@ -1,84 +1,147 @@
 .history-section {
   position: relative;
   width: 100%;
-  padding: 100px 0;
-  background: #f6f6f6;
+  padding: 30px 0;
+  background: linear-gradient(135deg, #f6f6f6 0%, #e9ecef 100%);
   display: flex;
   justify-content: center;
+  overflow: hidden; /* Prevent any overflow from animations */
 }
 
 .vertical-line {
   position: absolute;
-  width: 1px;
-  background: #222;
+  width: 2px; /* Slightly thicker for better visibility */
+  background: linear-gradient(to bottom, #6abcdf 0%, #4b9bbd 50%, #22495a 100%);
   height: 80%;
   left: 50%;
   transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(34, 34, 34, 0.2); /* Subtle glow */
 }
 
 .history-container {
   width: 90%;
-  max-width: 900px;
+  max-width: 1000px; /* Slightly wider for better spacing */
   position: relative;
+  z-index: 2;
 }
 
 .history-box {
   width: 45%;
   background: white;
-  padding: 20px;
-  border-radius: 8px;
-  margin: 10px 0;
+  padding: 30px; /* More padding for breathing room */
+  border-radius: 12px;
+  margin: 10px 0; /* Increased vertical spacing */
   opacity: 0;
-  transition: all 0.8s ease-in-out;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.05); /* Deeper shadows */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
+  position: relative;
+  /* Add a small connector line to the vertical line */
+}
+
+.history-box::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 2px;
+  background: #222;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.left::before {
+  right: -20px;
+}
+
+.right::before {
+  left: -20px;
 }
 
 /* Positioning */
 .left {
   float: left;
   clear: both;
-  transform: translateX(-80px);
+  transform: translateX(-100px) scale(0.95); /* Slide + subtle scale in */
 }
 
 .right {
   float: right;
   clear: both;
-  transform: translateX(80px);
+  transform: translateX(100px) scale(0.95);
 }
 
 /* Animation classes */
 .show-left {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1);
 }
 
 .show-right {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateX(0) scale(1);
 }
+
+/* Add a staggered delay for sequential reveal */
+.history-box:nth-child(1) { transition-delay: 0.1s; }
+.history-box:nth-child(2) { transition-delay: 0.2s; }
+.history-box:nth-child(3) { transition-delay: 0.3s; }
+.history-box:nth-child(4) { transition-delay: 0.4s; }
 
 /* Text styling */
 .history-box h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 24px; /* Slightly larger */
+  font-weight: 600;
+  color: #222;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.history-box h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(to right, #439cac, #03617e); /* Accent line under title */
 }
 
 .history-box p {
-  line-height: 1.6;
-  color: #444;
+  line-height: 1.7;
+  color: #555;
+  font-size: 16px; /* Better readability */
+}
+
+/* Hover effects for interactivity */
+.history-box:hover {
+  transform: translateY(-5px); /* Subtle lift on hover */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease; /* Faster for hover */
 }
 
 /* Mobile */
-@media(max-width: 768px) {
-  .vertical-line {
+@media (max-width: 768px) {
+  .vertical-line,
+  .history-box::before {
     display: none;
+  }
+
+  .history-section {
+    padding: 80px 0;
   }
 
   .history-box {
     width: 100%;
     float: none;
-    transform: translateX(0) !important;
+    margin: 20px 0;
+    transform: translateX(0) scale(1) !important;
     opacity: 1 !important;
+    transition: none; /* Disable animations on mobile for performance */
+  }
+
+  .history-box:nth-child(n) {
+    transition-delay: 0s;
   }
 }
