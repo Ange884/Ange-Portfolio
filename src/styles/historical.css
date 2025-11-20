@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   padding: 30px 0;
-  background: linear-gradient(135deg, #f6f6f6 0%, #e9ecef 100%);
+  background:#f9fafb;
   display: flex;
   justify-content: center;
   overflow: hidden; /* Prevent any overflow from animations */
@@ -11,8 +11,8 @@
 .vertical-line {
   position: absolute;
   width: 2px; /* Slightly thicker for better visibility */
-  background: linear-gradient(to bottom, #6abcdf 0%, #4b9bbd 50%, #22495a 100%);
-  height: 80%;
+  background: #22495a;
+  height: 90%;
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0 0 10px rgba(34, 34, 34, 0.2); /* Subtle glow */
@@ -35,7 +35,10 @@
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother easing */
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 2px 10px rgba(0, 0, 0, 0.05); /* Deeper shadows */
   border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border for depth */
+  transform: translateX();
   position: relative;
+  margin-left: 5px;
+  margin-right: 5px;
   /* Add a small connector line to the vertical line */
 }
 
@@ -43,43 +46,46 @@
   content: '';
   position: absolute;
   top: 50%;
-  width: 20px;
-  height: 2px;
-  background: #222;
+  width: 30px;
+  height: 30px;
+  background: #22495a;
   transform: translateY(-50%);
+
   z-index: 3;
+  border-radius: 50%;
+  justify-content: flex-start;
 }
 
 .left::before {
-  right: -20px;
+  right: -40px;
 }
 
 .right::before {
-  left: -20px;
+  left: -40px;
 }
 
 /* Positioning */
 .left {
   float: left;
   clear: both;
-  transform: translateX(-100px) scale(0.95); /* Slide + subtle scale in */
+  transform: translateX(-120px) scale(0.95); /* Slide + subtle scale in */
 }
 
 .right {
   float: right;
   clear: both;
-  transform: translateX(100px) scale(0.95);
+  transform: translateX(0px) scale(0.95);
 }
 
 /* Animation classes */
 .show-left {
   opacity: 1;
-  transform: translateX(0) scale(1);
+  transform: translateX(-40px) scale(1);
 }
 
 .show-right {
   opacity: 1;
-  transform: translateX(0) scale(1);
+  transform: translateX(40px) scale(1);
 }
 
 /* Add a staggered delay for sequential reveal */
@@ -116,7 +122,6 @@
 
 /* Hover effects for interactivity */
 .history-box:hover {
-  transform: translateY(-5px); /* Subtle lift on hover */
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
   transition: all 0.3s ease; /* Faster for hover */
 }
