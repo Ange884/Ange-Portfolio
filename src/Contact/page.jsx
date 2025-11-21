@@ -48,7 +48,8 @@ export default function ContactSection() {
     e.preventDefault();
     const apiBase = process.env.NEXT_PUBLIC_API_URL;
 
-    if (!apiBase) {
+    try {
+      if (!apiBase) {
       setErrorMsg("Missing NEXT_PUBLIC_API_URL. Please configure your backend URL.");
       return;
     }
@@ -65,7 +66,6 @@ export default function ContactSection() {
       message: e.target[4].value,
     };
 
-    try {
       const res = await fetch(`${apiBase.replace(/\/$/, "")}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
