@@ -34,13 +34,21 @@
 
 .skills-title {
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 900; /* extra bold */
   text-align: center;
   margin-bottom: 30px;
   color: #09111E;
   opacity: 0;
   animation: fadeInUp 0.6s ease-out 0.2s forwards;
+
+  /* Optional: make letters appear even heavier */
+  text-shadow: 
+    1px 1px #09111E,
+    1px -1px #09111E,
+    -1px 1px #09111E,
+    -1px -1px #09111E;
 }
+
 
 .category-buttons {
   display: flex;

@@ -38,9 +38,10 @@
 .heading {
   font-size: 1.2rem;
   color: #70a9a1;
-  font-weight: 500;
+  font-weight: 900; /* extra bold */
   background: #ebf2f1;
   width: 100px;
+  display: flex;          /* needed for align-items & justify-content */
   align-items: center;
   justify-content: center;
   margin: auto;
@@ -49,6 +50,13 @@
   opacity: 0;
   animation: fadeInUp 0.6s ease-out 0.2s forwards;
   transition: transform 0.3s ease;
+
+  /* Optional: make letters visually heavier */
+  text-shadow: 
+    0.5px 0.5px #70a9a1,
+    -0.5px 0.5px #70a9a1,
+    0.5px -0.5px #70a9a1,
+    -0.5px -0.5px #70a9a1;
 }
 
 .heading:hover {
@@ -58,10 +66,17 @@
 .project-heading {
   font-size: 2.4rem;
   margin-top: 5px;
-  font-weight: bolder;
-  color: #22495a;
+  font-weight: 900; /* extra bold */
+  color: #059669;
   opacity: 0;
   animation: fadeInUp 0.6s ease-out 0.3s forwards;
+
+  /* Optional: visually heavier text */
+  text-shadow: 
+    1px 1px #22495a,
+    1px -1px #22495a,
+    -1px 1px #22495a,
+    -1px -1px #22495a;
 }
 
 .intro {
