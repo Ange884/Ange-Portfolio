@@ -8,21 +8,23 @@ export default function ReviewsSection() {
       name: "Mugisha I Nora",
       text: "Nziza Ange is a creative developer who makes great mobile and frontends",
       date: "1 May 2025",
-      rating: 5
+      rating: 5,
+      img: "/profiles/mugisha.jpg" // replace with your image path
     },
     {
       name: "Jean Paul",
       text: "Nziza is highly motivated and brings fresh ideas to every project",
       date: "15 Apr 2025",
-      rating: 4
+      rating: 4,
+      img: "/profiles/jean.jpg"
     },
     {
       name: "Alice Uwase",
       text: "Working with Nziza is always a smooth and productive experience",
       date: "30 Mar 2025",
-      rating: 5
+      rating: 5,
+      img: "/profiles/alice.jpg"
     }
-    // Add more reviews here
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -61,6 +63,11 @@ export default function ReviewsSection() {
           <button className="arrow prev" onClick={prevReview}>&lt;</button>
 
           <div className="review-card">
+            <img 
+              src={reviews[currentIndex].img} 
+              alt={reviews[currentIndex].name} 
+              className="profile-img"
+            />
             <h2 className="client-name">{reviews[currentIndex].name}</h2>
             <div className="stars-rates">
               {"★".repeat(reviews[currentIndex].rating)}
