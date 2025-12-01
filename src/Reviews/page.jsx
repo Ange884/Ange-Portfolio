@@ -9,21 +9,21 @@ export default function ReviewsSection() {
       text: "Nziza Ange is a creative developer who makes great mobile and frontends",
       date: "1 May 2025",
       rating: 5,
-      img: "/profiles/mugisha.jpg" // replace with your image path
+      img: "/images/nora.png" // replace with your image path
     },
     {
       name: "Jean Paul",
       text: "Nziza is highly motivated and brings fresh ideas to every project",
       date: "15 Apr 2025",
       rating: 4,
-      img: "/profiles/jean.jpg"
+      img: "/images/josh.png"
     },
     {
       name: "Alice Uwase",
       text: "Working with Nziza is always a smooth and productive experience",
       date: "30 Mar 2025",
       rating: 5,
-      img: "/profiles/alice.jpg"
+      img: "/images/nora.png"
     }
   ];
 
