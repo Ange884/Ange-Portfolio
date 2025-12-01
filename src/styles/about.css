@@ -264,6 +264,7 @@
   font-size: 1.1rem;
   font-weight: 700;
   color: #22495a;
+  text-shadow: 1px 1px #001209, 1px -1px #001209, -1px 1px #001209, -1px -1px #001209;
 }
 
 .about-subheading {

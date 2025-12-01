@@ -45,7 +45,7 @@ export default function Page() {
         <ProjectsSection />
       </section>
 
-      <section id="review">
+      <section id="reviews">
         <ReviewsSection/>
       </section>
 
