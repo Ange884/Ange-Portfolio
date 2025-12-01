@@ -41,7 +41,7 @@ export default function ReviewsSection() {
     <div className="reviewsContainer">
       <div className="left-part">
         <h1 className="thoughts">
-          What People Think <br/> About <span className="highlighted">NziZA</span>
+          What People Talk <br/> About <span className="highlighted">NziZA</span>
         </h1>
 
         <p className="review-paragraph">
