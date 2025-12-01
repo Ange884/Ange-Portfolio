@@ -46,16 +46,27 @@
 /* MAIN HEADING */
 .main-heading {
   font-size: 4rem;
-  font-weight: 700;
-  color: #fff;
+  font-weight: 900; /* Extra bold / heaviest standard weight */
+  color: #fff;   /* Your new color */
   line-height: 1.1;
   position: relative;
   z-index: 1;
-  /* Enhanced entrance with elastic bounce */
   animation: bounceInUp 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
   opacity: 0;
   transform: scale(0.8);
+  
+  /* Make it visually heavier with text shadow */
+  text-shadow: 
+    1px 1px #fff,
+    1px -1px #22495a,
+    -1px 1px #fff,
+    -1px -1px #fff,
+    0 1px #fff,
+    1px 0 #fff,
+    0 -1px #fff,
+    -1px 0 #fff;
 }
+
 
 /* Smooth hover with gentle sway */
 .main-heading:hover {

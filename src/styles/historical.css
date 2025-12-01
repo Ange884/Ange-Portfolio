@@ -11,6 +11,20 @@ history-section-wrapper{
     background-color: #fff;
     margin-top: 0px;
 }
+.history-heading h1 {
+  font-size: 3rem;       /* adjust size as needed */
+  font-weight: 900;      /* extra bold */
+  color: #22495a;        /* optional color */
+  line-height: 1.2;
+  
+  /* Optional: make it appear even heavier */
+  text-shadow: 
+    1px 1px #222,
+    1px -1px #22495a,
+    -1px 1px #22495a,
+    -1px -1px #22495a;
+}
+
 
 .vertical-line {
   position: absolute;
@@ -114,12 +128,17 @@ history-section-wrapper{
 /* Text styling */
 .history-box h3 {
   margin-bottom: 15px;
-  font-size: 18px; /* Slightly larger */
+  font-size: 20px; /* Slightly larger */
   font-weight: 600;
   color: #22495a;
   position: relative;
   padding-bottom: 10px;
+  text-shadow: 
+    1px 1px #22495a,
+    -1px 1px #22495a,
+    -1px -1px #22495a;
 }
+
 
 .history-box h3::after {
   content: '';
