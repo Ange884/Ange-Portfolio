@@ -103,26 +103,25 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #22495a;
-  color: white;
+  color: #000;
   border: none;
   font-size: 1.2rem;
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 50%;
-  transition: background 0.2s;
 }
 
 .arrow:hover {
   background-color: #1a3a4d;
+  color:#fff,
 }
 
 .prev {
-  left: -25px;
+  left: -80px;
 }
 
 .next {
-  right: -25px;
+  right: -80px;
 }
 
 @media (max-width: 900px) {

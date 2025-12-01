@@ -73,7 +73,9 @@ export default function ReviewsSection() {
             <p className="date">{reviews[currentIndex].date}</p>
           </div>
 
-          <button className="arrow next" onClick={nextReview}>&gt;</button>
+          <button className="arrow prev" onClick={prevReview}>&#8592;</button>  {/* ← */}
+          <button className="arrow next" onClick={nextReview}>&#8594;</button>  {/* → */}
+
         </div>
       </div>
     </div>
