@@ -50,7 +50,7 @@ export default function HistoricalBackground() {
             ref={(el) => (leftItems.current[0] = el)}
           >
             <h3>My Early Beginnings</h3>
-            <p>
+            <p style={{fontWeight:900 , fontSize: "0.9rem"}}>
               In my early primary school years, I participated in a spelling competition and won, which sparked my love for learning and challenges.
             </p>
           </div>
@@ -61,10 +61,10 @@ export default function HistoricalBackground() {
             ref={(el) => (rightItems.current[0] = el)}
           >
             <h3>Growing Up</h3>
-            <p>
+            <p style={{fontWeight:900 , fontSize: "0.9rem"}}>
             I discovered coding and started exploring it.  
-         Over time, I realized I loved programming and building projects,  
-         which opened up new opportunities and sparked my passion for technology.
+            Over time, I realized I loved programming and building projects,  
+             which opened up new opportunities and sparked my passion for technology.
 
             </p>
           </div>
@@ -75,7 +75,7 @@ export default function HistoricalBackground() {
             ref={(el) => (leftItems.current[1] = el)}
           >
             <h3>Education Journey</h3>
-            <p style={{ fontWeight: 800, color: "#555" }}>
+            <p style={{fontWeight:900 , fontSize: "0.9rem"}}>
               2015-2020 : NEW VISION PRIMARY SCHOOL <br/>
               2021-2024 : FAWE GIRLS' SCHOOL  <br/>
               2024-2027 : RWANDA CODING ACADEMY  <br/>
@@ -88,7 +88,7 @@ export default function HistoricalBackground() {
             ref={(el) => (rightItems.current[1] = el)}
           >
             <h3>Becoming Who I Am</h3>
-            <p>
+            <p style={{fontWeight:900 , fontSize: "0.9rem"}}>
               Now, I am a first-year student at Rwanda Coding Academy, focusing on frontend and mobile web development.  
               I am passionate about building projects that solve real problems.
 
