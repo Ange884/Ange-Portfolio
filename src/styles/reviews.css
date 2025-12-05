@@ -106,7 +106,6 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: #000;
   border: none;
   font-size: 1.2rem;
   padding: 10px 15px;
@@ -115,8 +114,8 @@
 }
 
 .arrow:hover {
-  background-color: #1a3a4d;
-  color:#fff,
+  font-size: 1.3rem;
+  background-color: #059669;
 }
 
 .prev {
